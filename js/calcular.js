@@ -16,13 +16,12 @@ function calcular(){
     console.log(a);
     console.log(b);
     console.log(tipo);
+
     if(tipo == "textil"){
         costo = corte * costotermocomun;
-        resultado = costo * porcentajeganancia;
     }
     if(tipo == "autoadhesivo"){
         costo = corte * costoautoadhesivo;
-        resultado = costo * porcentajeganancia;
     }
     if(tipo == "especial"){
         costo = corte * costoespecial;
@@ -30,12 +29,24 @@ function calcular(){
     }
     if(tipo == "fluo"){
         costo = corte * costofluo;
-        resultado = costo * porcentajeganancia;
     }
     if(tipo == "reflec"){
         costo = corte * costoreflec;
-        resultado = costo * porcentajeganancia;
     }
-    document.getElementById("resultado1").innerHTML = "Precio a cobrar $"+resultado.toFixed(2);
-    document.getElementById("resultado2").innerHTML = "Costo del corte $"+costo.toFixed(2);
+
+    if(a == 0 || b == 0){
+            Swal.fire({
+                position: 'top-end',
+                icon: 'warning',
+                title: 'Como vas a multiplicar por 0, keidiota',
+                showConfirmButton: false,
+                timer: 2500
+        })
+    }else{
+        resultado = costo * porcentajeganancia;
+        document.getElementById("resultado1").innerHTML = "Precio a cobrar $"+resultado.toFixed(2);
+        document.getElementById("resultado2").innerHTML = "Costo del corte $"+costo.toFixed(2);
+    }
+    
+    
 }
