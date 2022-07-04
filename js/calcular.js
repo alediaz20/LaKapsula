@@ -1,8 +1,8 @@
-let costoautoadhesivo = 728 / 6000;
-let costotermocomun = 1232 / 5000;
-let costoespecial = 2218 / 5000;
-let costofluo = 1680 / 5000;
-let costoreflec = 3204 / 5000;
+let costoautoadhesivo = 850 / 6000;
+let costotermocomun = 1300 / 5000;
+let costoespecial = 2400 / 5000;
+let costofluo = 1800 / 5000;
+let costoreflec = 3500 / 5000;
 let porcentajeganancia = 3; //300%
 
 
