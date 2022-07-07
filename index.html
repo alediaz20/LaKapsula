@@ -14,10 +14,12 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="views/dist/css/adminlte.min.css">
   <link rel="stylesheet" href="views/dist/css/custom.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- <link rel="stylesheet" href="sweetalert2.min.css"> -->
 </head>
 
 <body style="font-family: 'Jost', sans-serif;">
+  <div class="container">
     <div class="card card-info card-borderless">
       <div class="card-header">
         <h3 class="card-title">Calculadora de costos de vinilo</h3>
@@ -29,7 +31,7 @@
         
         <!-- <h3 style="text-align: right;">Cavila</h3> -->
       </div>
-      <form class="form-horizontal box">
+      <form class="form-horizontal">
         <div class="card-body">
           <div class="form-group row">
             <label for="Alto" class="col-sm-2 col-form-label">Tipo de vinilo</label>
@@ -56,28 +58,18 @@
             </div>
           </div>
         </div>
-        <div class="card-footer">
-          <input type="button" class="btn btn-info" onclick="calcular()" value="Calcular" i="">
+        <div class="card-footer text-center">
+          <input type="button" class="btn btn-info" onclick="calcular()" value="Calcular">
         </div>
       </form>
     </div>
-    <div class="card card-info card-borderless">
-      <div class="card-header">
-        <h3 class="">Resultado</h3>
-      </div>
+    <div class="card card-info card-borderless" id="resultado" style="display:none;">
       <div class="card-body text-center">
         <h1 class="text-info" id="resultado1"></h1>
         <h3 class="text-info" id="resultado2"></h1>
       </div>
     </div>
-    <footer class="main-footer">
-      <div class="float-right d-sm-inline-block">
-        Precio actualizado <b>04/07/2022</b>
-      </div>
-    </footer>
-    
-    
-
+  </div>
   <!-- REQUIRED SCRIPTS -->
   <!-- jQuery -->
   <script src="views/plugins/jquery/jquery.min.js"></script>
@@ -89,5 +81,22 @@
   <script src="js/sweetalert2.all.min.js"></script>
   
 </body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </html>

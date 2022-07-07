@@ -13,9 +13,6 @@ function calcular(){
     let corte = a*b;
     var resultado;
     var costo;
-    console.log(a);
-    console.log(b);
-    console.log(tipo);
 
     if(tipo == "textil"){
         costo = corte * costotermocomun;
@@ -46,7 +43,6 @@ function calcular(){
         resultado = costo * porcentajeganancia;
         document.getElementById("resultado1").innerHTML = "Precio a cobrar $"+resultado.toFixed(2);
         document.getElementById("resultado2").innerHTML = "Costo del corte $"+costo.toFixed(2);
+        document.getElementById("resultado").style="display: block";
     }
-    
-    
 }
