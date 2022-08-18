@@ -1,8 +1,9 @@
-let costoautoadhesivo = 850 / 6000;
-let costotermocomun = 1300 / 5000;
-let costoespecial = 2400 / 5000;
-let costofluo = 1800 / 5000;
-let costoreflec = 3500 / 5000;
+let costoautoadhesivo = 1350 / 6000;
+let costotermocomun = 1900 / 5000;
+let costoespecial = 3500 / 5000;
+let costofluo = 2700 / 5000;
+let costoreflec = 4850 / 5000;
+let costoholo = 2700 / 5000;
 let porcentajeganancia = 3; //300%
 
 
@@ -29,6 +30,9 @@ function calcular(){
     }
     if(tipo == "reflec"){
         costo = corte * costoreflec;
+    }
+    if(tipo == "holografico"){
+        costo = corte * costoholo;
     }
 
     if(a == 0 || b == 0){
