@@ -18,313 +18,36 @@
   <!-- <link rel="stylesheet" href="sweetalert2.min.css"> -->
 </head>
 <body style="font-family: 'Jost', sans-serif;">
-
+<div class="container mb-4">
+  <button class="btn btn-primary"><a href="views/prendas.php" class="text-white">Agregar prenda</a></button>
+  <button class="btn btn-primary"><a href="views/telas.php" class="text-white">Telas</a></button>
+</div>
 <div class="container">
+
 <?php 
-    require_once("ajax/getPrendas.php");
-    foreach($prendas as $key => $value){ 
-      $telas = explode(",",$value->telas);
-      ?>
-        <div class="card">
-          <!-- header -->
-          <div class="card-header text-center"><?php echo $value->nombre ?></div>
-          <!-- body -->
-          <div class="card-body text-center">
-            <img class="" src="imgs/<?php echo $value->id?>"" alt="portada" width="150">
-            <form id="<?php echo $value->nombre?>">
-              <?php foreach ($telas as $tela => $nombretela) { ?>
-                <input type="number" class="form-control mb-3" id="$value" placeholder="<?php echo $nombretela ?>">
-              <?php } ?>
-            </form>
-          </div>
-          <!-- footer -->
-          <div class="card-footer text-center">
-            <button class="btn btn-kuality" onclick="calcular(<?php echo $value->id ?>)">Calcular </button>
-          </div>  
+  require_once("ajax/getPrendas.php");
+  foreach($prendas as $key => $value){ 
+    $telas = explode(",",$value->telas);
+    ?>
+      <div class="card">
+        <!-- header -->
+        <div class="card-header text-center"><?php echo $value->nombre ?></div>
+        <!-- body -->
+        <div class="card-body text-center">
+          <img class="" src="imgs/<?php echo $value->id?>"" alt="portada" width="150">
+          <form id="<?php echo $value->nombre?>">
+            <?php foreach ($telas as $tela => $nombretela) { ?>
+              <input type="number" class="form-control mb-3" id="$value" placeholder="<?php echo $nombretela ?>">
+            <?php } ?>
+          </form>
         </div>
+        <!-- footer -->
+        <div class="card-footer text-center">
+          <button class="btn btn-kuality" onclick="calcular(<?php echo $value->id ?>)">Calcular </button>
+        </div>  
+      </div>
 <?php } ?>
-<!--
-<div class="card">
-  <div class="card-header text-center">Top deportivo 1</div>
-  <div class="card-body text-center">
-    <img class="" src="imgs/topdeportivo.jpg" alt="portada" width="150">
-    <form id="topDeportivo1">
-      <input type="number" class="form-control mb-3" placeholder="Lycra">
-      <input type="number" class="form-control mb-3" placeholder="Microtul">
-    </form>
-    <button class="btn btn-kuality" onclick="calcular('topDeportivo1')">Calcular </button>
-  </div>
-  <div class="card-footer"></div>  
 </div>
-
-<div class="card">
-  <div class="card-header text-center">Top deportivo 2</div>
-  <div class="card-body text-center">
-    <img class="" src="imgs/topdeportivo2.jpg" alt="portada" width="150">
-    <form id="topDeportivo2">
-      <input type="number" class="form-control mb-3" placeholder="Lycra">
-      <input type="number" class="form-control mb-3" placeholder="Microtul">
-    </form>
-    <button class="btn btn-kuality" onclick="calcular('topDeportivo2')">Calcular </button>
-  </div>
-  <div class="card-footer"></div>  
-</div>
-
-<div class="card">
-  <div class="card-header text-center">Pupera</div>
-  <div class="card-body text-center">
-    <img class="" src="imgs/pupera.jpg" alt="portada" width="150">
-    <form id="pupera">
-      <input type="number" class="form-control mb-3" placeholder="Lycra">
-      <input type="number" class="form-control mb-3" placeholder="Microtul">
-    </form>
-    <button class="btn btn-kuality" onclick="calcular('pupera')">Calcular </button>
-  </div>
-  <div class="card-footer"></div>  
-</div>
-
-<div class="card">
-  <div class="card-header text-center">Pupera 2</div>
-  <div class="card-body text-center">
-    <img class="" src="imgs/pupera2.jpg" alt="portada" width="150">
-    <form id="pupera2">
-      <input type="number" class="form-control mb-3" placeholder="Lycra">
-      <input type="number" class="form-control mb-3" placeholder="Microtul">
-    </form>
-    <button class="btn btn-kuality" onclick="calcular('pupera2')">Calcular </button>
-  </div>
-  <div class="card-footer"></div>  
-</div>
-
-<div class="card">
-  <div class="card-header text-center">Pupera 3</div>
-  <div class="card-body text-center">
-    <img class="" src="imgs/pupera3.jpg" alt="portada" width="150">
-    <form id="pupera3">
-      <input type="number" class="form-control mb-3" placeholder="Lycra">
-      <input type="number" class="form-control mb-3" placeholder="Microtul">
-    </form>
-    <button class="btn btn-kuality" onclick="calcular('pupera3')">Calcular </button>
-  </div>
-  <div class="card-footer"></div>  
-</div>
-
-<div class="card">
-  <div class="card-header text-center">Remeron</div>
-  <div class="card-body text-center">
-    <img class="" src="imgs/remeron.jpg" alt="portada" width="150">
-    <form id="remeron">
-      <input type="number" class="form-control mb-3" placeholder="Lycra">
-      <input type="number" class="form-control mb-3" placeholder="Microtul">
-    </form>
-    <button class="btn btn-kuality" onclick="calcular('remeron')">Calcular </button>
-  </div>
-  <div class="card-footer"></div>  
-</div>
-
-<div class="card">
-  <div class="card-header text-center">Remeron 2</div>
-  <div class="card-body text-center">
-    <img class="" src="imgs/remeron2.jpg" alt="portada" width="150">
-    <form id="remeron2">
-      <input type="number" class="form-control mb-3" placeholder="Lycra">
-      <input type="number" class="form-control mb-3" placeholder="Microtul">
-    </form>
-    <button class="btn btn-kuality" onclick="calcular('remeron2')">Calcular </button>
-  </div>
-  <div class="card-footer"></div>  
-</div>
-
-<div class="card">
-  <div class="card-header text-center">Remeron 3</div>
-  <div class="card-body text-center">
-    <img class="" src="imgs/remeron3.jpg" alt="portada" width="150">
-    <form id="remeron3">
-      <input type="number" class="form-control mb-3" placeholder="Lycra">
-      <input type="number" class="form-control mb-3" placeholder="Microtul">
-    </form>
-    <button class="btn btn-kuality" onclick="calcular('remeron3')">Calcular </button>
-  </div>
-  <div class="card-footer"></div>  
-</div>
-
-<div class="card">
-  <div class="card-header text-center">Remeron 4</div>
-  <div class="card-body text-center">
-    <img class="" src="imgs/remeron4.jpg" alt="portada" width="150">
-    <form id="remeron4">
-      <input type="number" class="form-control mb-3" placeholder="Lycra">
-      <input type="number" class="form-control mb-3" placeholder="Microtul">
-    </form>
-    <button class="btn btn-kuality" onclick="calcular('remeron4')">Calcular </button>
-  </div>
-  <div class="card-footer"></div>  
-</div>
-
-<div class="card">
-  <div class="card-header text-center">Buzo Pupera</div>
-  <div class="card-body text-center">
-    <img class="" src="imgs/buzopupera.jpg" alt="portada" width="150">
-    <form id="buzopupera">
-      <input type="number" class="form-control mb-3" placeholder="Lycra">
-      <input type="number" class="form-control mb-3" placeholder="Microtul">
-    </form>
-    <button class="btn btn-kuality" onclick="calcular('buzopupera')">Calcular </button>
-  </div>
-  <div class="card-footer"></div>  
-</div>
-
-<div class="card">
-  <div class="card-header text-center">Buzo Overzided</div>
-  <div class="card-body text-center">
-    <img class="" src="imgs/buzooversided.jpg" alt="portada" width="150">
-    <form id="buzooversided">
-      <input type="number" class="form-control mb-3" placeholder="Lycra">
-      <input type="number" class="form-control mb-3" placeholder="Microtul">
-    </form>
-    <button class="btn btn-kuality" onclick="calcular('buzooversided')">Calcular </button>
-  </div>
-  <div class="card-footer"></div>  
-</div>
-
-<div class="card">
-  <div class="card-header text-center">Short</div>
-  <div class="card-body text-center">
-    <img class="" src="imgs/short.jpg" alt="portada" width="150">
-    <form id="short">
-      <input type="number" class="form-control mb-3" placeholder="Lycra">
-      <input type="number" class="form-control mb-3" placeholder="Microtul">
-    </form>
-    <button class="btn btn-kuality" onclick="calcular('short')">Calcular </button>
-  </div>
-  <div class="card-footer"></div>  
-</div>
-
-<div class="card">
-  <div class="card-header text-center">Short 2</div>
-  <div class="card-body text-center">
-    <img class="" src="imgs/short2.jpg" alt="portada" width="150">
-    <form id="short2">
-      <input type="number" class="form-control mb-3" placeholder="Lycra">
-      <input type="number" class="form-control mb-3" placeholder="Microtul">
-    </form>
-    <button class="btn btn-kuality" onclick="calcular('short2')">Calcular </button>
-  </div>
-  <div class="card-footer"></div>  
-</div>
-
-<div class="card">
-  <div class="card-header text-center">Biker</div>
-  <div class="card-body text-center">
-    <img class="" src="imgs/biker.jpg" alt="portada" width="150">
-    <form id="biker">
-      <input type="number" class="form-control mb-3" placeholder="Lycra">
-      <input type="number" class="form-control mb-3" placeholder="Microtul">
-    </form>
-    <button class="btn btn-kuality" onclick="calcular('biker')">Calcular </button>
-  </div>
-  <div class="card-footer"></div>  
-</div>
-
-<div class="card">
-  <div class="card-header text-center">Calza Larga</div>
-  <div class="card-body text-center">
-    <img class="" src="imgs/calzalarga.jpg" alt="portada" width="150">
-    <form id="calzalarga">
-      <input type="number" class="form-control mb-3" placeholder="Lycra">
-      <input type="number" class="form-control mb-3" placeholder="Microtul">
-    </form>
-    <button class="btn btn-kuality" onclick="calcular('calzalarga')">Calcular </button>
-  </div>
-  <div class="card-footer"></div>  
-</div>
-
-<div class="card">
-  <div class="card-header text-center">Pantalon</div>
-  <div class="card-body text-center">
-    <img class="" src="imgs/pantalon.jpg" alt="portada" width="150">
-    <form id="pantalon">
-      <input type="number" class="form-control mb-3" placeholder="Lycra">
-      <input type="number" class="form-control mb-3" placeholder="Microtul">
-    </form>
-    <button class="btn btn-kuality" onclick="calcular('pantalon')">Calcular </button>
-  </div>
-  <div class="card-footer"></div>  
-</div>
-
-<div class="card">
-  <div class="card-header text-center">Pantalon 2</div>
-  <div class="card-body text-center">
-    <img class="" src="imgs/pantalon2.jpg" alt="portada" width="150">
-    <form id="pantalon2">
-      <input type="number" class="form-control mb-3" placeholder="Lycra">
-      <input type="number" class="form-control mb-3" placeholder="Microtul">
-    </form>
-    <button class="btn btn-kuality" onclick="calcular('pantalon2')">Calcular </button>
-  </div>
-  <div class="card-footer"></div>  
-</div>
-
-<div class="card">
-  <div class="card-header text-center">Palazzo</div>
-  <div class="card-body text-center">
-    <img class="" src="imgs/palazzo.jpg" alt="portada" width="150">
-    <form id="palazzo">
-      <input type="number" class="form-control mb-3" placeholder="Lycra">
-      <input type="number" class="form-control mb-3" placeholder="Microtul">
-    </form>
-    <button class="btn btn-kuality" onclick="calcular('palazzo')">Calcular </button>
-  </div>
-  <div class="card-footer"></div>  
-</div>
-
-<div class="card">
-  <div class="card-header text-center">Catsuit</div>
-  <div class="card-body text-center">
-    <img class="" src="imgs/catsuit.jpg" alt="portada" width="150">
-    <form id="catsuit">
-      <input type="number" class="form-control mb-3" placeholder="Lycra">
-      <input type="number" class="form-control mb-3" placeholder="Microtul">
-    </form>
-    <button class="btn btn-kuality" onclick="calcular('catsuit')">Calcular </button>
-  </div>
-  <div class="card-footer"></div>  
-</div>
-
-<div class="card">
-  <div class="card-header text-center">Malla</div>
-  <div class="card-body text-center">
-    <img class="" src="imgs/malla.jpg" alt="portada" width="150">
-    <form id="malla">
-      <input type="number" class="form-control mb-3" placeholder="Lycra">
-      <input type="number" class="form-control mb-3" placeholder="Microtul">
-    </form>
-    <button class="btn btn-kuality" onclick="calcular('malla')">Calcular </button>
-  </div>
-  <div class="card-footer"></div>  
-</div>
-
-<div class="card">
-  <div class="card-header text-center">Malla 2</div>
-  <div class="card-body text-center">
-    <img class="" src="imgs/malla2.jpg" alt="portada" width="150">
-    <form id="malla2">
-      <input type="number" class="form-control mb-3" placeholder="Lycra">
-      <input type="number" class="form-control mb-3" placeholder="Microtul">
-    </form>
-    <button class="btn btn-kuality" onclick="calcular('malla2')">Calcular </button>
-  </div>
-  <div class="card-footer"></div>  
-</div>
- -->
-
-</div>
-
-
-
-
-
-
   <!-- REQUIRED SCRIPTS -->
   <!-- jQuery -->
   <script src="views/plugins/jquery/jquery.min.js"></script>
@@ -332,26 +55,6 @@
   <!-- Bootstrap 4 -->
   <script src="views/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
   <!-- AdminLTE App -->
-
   <script src="js/sweetalert2.all.min.js"></script>
-  
 </body>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </html>
