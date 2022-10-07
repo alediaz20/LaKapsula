@@ -23,7 +23,7 @@
     <button class="btn btn-primary"><a href="../index.php" class="text-white">Inicio</a></button>
     <button class="btn btn-primary"><a href="prendas.php" class="text-white">Agregar prendas</a></button>
 </div>
-<div class="container-telas">
+<div class="container-telas p-3">
     <div class="card card-primary">
         <div class="card-header"><h3 class="card-title">Nueva tela</h3></div> 
         <form method="post" name="telas" action="../ajax/saveTelas.php">
