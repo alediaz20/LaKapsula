@@ -31,3 +31,12 @@
     border-color: rgb(3, 130, 134);
     box-shadow: 0 0 0 0 rgb(3, 130, 134);
   }
+
+  .text-kuality {
+    color:  rgb(3, 130, 134);
+  }
+
+  .bg-kuality {
+    background-color:  rgb(3, 130, 134);
+    color: white;
+  }
