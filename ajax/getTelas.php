@@ -1,7 +1,7 @@
 <?php
 require_once("connect.php");
 
-$result = $mysqli->query("SELECT * FROM `telas`");
+$result = $mysqli->query("SELECT * FROM `telas` ORDER BY id");
 if($result){
      // Cycle through results
     while ($row = $result->fetch_object()){

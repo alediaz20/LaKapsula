@@ -5,7 +5,7 @@ require_once("connect.php");
 
 $post = $_POST;
 $tabla = 'prendas';
-$sql = "INSERT INTO `prendas`(`nombre`, `telas`) VALUES ('".$post['prenda_nombre']."','".$post['prenda_telas']."')";
+$sql = "INSERT INTO `prendas`(nombre,telas,metros_por_tela) VALUES ('".$post['prenda_nombre']."','".$post['prenda_telas']."','".$post['metros_por_tela']."')";
 $result = $mysqli->query($sql);
 
 $sql2 = "SELECT id FROM `prendas` WHERE `nombre` = '".$post['prenda_nombre']."'";

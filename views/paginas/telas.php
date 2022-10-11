@@ -26,7 +26,7 @@
         </form>
     </div>
     <?php require_once("ajax/getTelas.php"); ?>
-    <div class="card">
+    <div class="card card-primary">
         <div class="card-header">
             <h3 class="card-title">Telas</h3>
         </div>
@@ -38,6 +38,8 @@
                         <th>Tela</th>
                         <th>Precio x Kg</th>
                         <th style="width: 40px">Metros x Kg</th>
+                        <th>Precio x Metro</th>
+                        <th>Editar</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -47,7 +49,8 @@
                         <td><?php echo $value->nombre; ?></td>
                         <td>$<?php echo $value->precio_por_kg; ?></td>
                         <td><?php echo $value->metros_por_kg; ?></td>
-                        <td><button></button></td>
+                        <td>$<?php echo $value->precio_por_metro; ?></td>
+                        <td><button class="btn btn-success">Editar</button></td>
                     </tr>
                     <?php } ?>
                 </tbody>

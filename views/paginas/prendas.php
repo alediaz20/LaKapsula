@@ -1,4 +1,4 @@
-<div class="container text-center">
+<div class="container-telas p-3">
     <div class="card card-primary">
         <div class="card-header"><h3 class="card-title">Nueva prenda</h3></div> 
         
@@ -13,6 +13,10 @@
                     <input type="text" class="form-control" name="prenda_telas" placeholder="Telas (Separado por comas)">
                 </div>
                 <div class="form-group">
+                    <label for="metros_por_tela">Metros por tela</label>
+                    <input type="text" class="form-control" name="metros_por_tela" placeholder="Metros por tela (Separado por comas)">
+                </div>
+                <div class="form-group">
                     <label for="imagen">Imagen</label>
                     <input type="file" name="imagen">
                 </div>
@@ -21,5 +25,31 @@
                 <input type="submit" class="btn btn-primary" value="Guardar"></input>
             </div>
         </form>
+    </div>
+    <?php require_once("ajax/getPrendas.php"); ?>
+    <div class="card card-primary">
+        <div class="card-header">
+            <h3 class="card-title">Prendas</h3>
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th style="width: 10px">Id</th>
+                        <th>Prenda</th>
+                        <th>Telas</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach($prendas as $key => $value){ ?>
+                    <tr>
+                        <td><?php echo $value->id;?></td>
+                        <td><?php echo $value->nombre; ?></td>
+                        <td><?php echo $value->telas; ?></td>
+                    </tr>
+                    <?php } ?>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
