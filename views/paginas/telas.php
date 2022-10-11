@@ -50,7 +50,7 @@
                         <td>$<?php echo $value->precio_por_kg; ?></td>
                         <td><?php echo $value->metros_por_kg; ?></td>
                         <td>$<?php echo $value->precio_por_metro; ?></td>
-                        <td><button class="btn btn-success">Editar</button></td>
+                        <td><a href="index.php?pagina=editarTela&id=<?php echo $value->id ?>" class="btn btn-info">Editar</a></td>
                     </tr>
                     <?php } ?>
                 </tbody>

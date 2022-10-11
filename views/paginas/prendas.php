@@ -38,6 +38,7 @@
                         <th style="width: 10px">Id</th>
                         <th>Prenda</th>
                         <th>Telas</th>
+                        <th>Editar</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -46,6 +47,7 @@
                         <td><?php echo $value->id;?></td>
                         <td><?php echo $value->nombre; ?></td>
                         <td><?php echo $value->telas; ?></td>
+                        <td><a href="index.php?pagina=editarPrenda&id=<?php echo $value->id ?>" class="btn btn-info">Editar</a></td>
                     </tr>
                     <?php } ?>
                 </tbody>

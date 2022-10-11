@@ -63,7 +63,7 @@
 
   <div>
       <?php
-        $paginas = ["prendas","telas","listado"];
+        $paginas = ["prendas","telas","listado","editarTela","editarPrenda","login"];
         if(isset($_GET['pagina'])){
           if(in_array($_GET['pagina'],$paginas)){
             include_once("paginas/".$_GET['pagina'].".php");
