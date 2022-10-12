@@ -1,8 +1,12 @@
 <?php
-
 class ControllerPlantilla{
     public function cTraerPlantilla(){
-        include("views/plantilla.php");
+        session_start();
+        if(!isset($_SESSION['user'])){
+            include("views/paginas/login.php");
+        }else{
+            include("views/plantilla.php");
+        }
     }
 }
 

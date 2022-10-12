@@ -16,54 +16,70 @@
   <link rel="stylesheet" href="css/custom.css">
 </head>
 <body style="font-family: 'Jost', sans-serif;">
-
+<?php
+  if($_SESSION['user'] == 'cavila'){
+      $paginas = ["prendas","telas","listado","editarTela","editarPrenda","login"];
+  }else{
+    $paginas = ["listado","login"];
+  }
+?>
 <div class="container-fluid bg-light mb-5">
   <div class="nav nav-justified py-2 nav-pills">
-    <?php if(isset($_GET['pagina'])): ?>
-      <?php if($_GET['pagina']=="listado"): ?>
+    <?php if(isset($_GET['pagina'])){ ?>
+      <!-- listado -->
+      <?php if($_GET['pagina']=="listado"){ ?>
         <li class="nav-item">
           <a class="nav-link active" href="index.php?pagina=listado">Listado de prendas</a>
         </li>
-      <?php else: ?>
+      <?php }else{ ?>
         <li class="nav-item">
           <a class="nav-link" href="index.php?pagina=listado">Listado de prendas</a>
         </li>
-      <?php endif ?>
-      <?php if($_GET['pagina']=="prendas"): ?>
-        <li class="nav-item">
-          <a class="nav-link active" href="index.php?pagina=prendas">Prendas</a>
-        </li>
-      <?php else: ?>
-        <li class="nav-item">
-          <a class="nav-link" href="index.php?pagina=prendas">Prendas</a>
-        </li>
-      <?php endif ?>
-      <?php if($_GET['pagina']=="telas"): ?>
-        <li class="nav-item">
-          <a class="nav-link active" href="index.php?pagina=telas">Telas</a>
-        </li>
-      <?php else: ?>
-        <li class="nav-item">
-          <a class="nav-link" href="index.php?pagina=telas">Telas</a>
-        </li>
-      <?php endif ?>
-      <?php else: ?>
+      <?php } ?>
+
+        <?php  if($_SESSION['user'] == 'cavila') {      
+          // prendas
+          if($_GET['pagina']=="prendas"){ ?>
+            <li class="nav-item">
+              <a class="nav-link active" href="index.php?pagina=prendas">Prendas</a>
+            </li>
+          <?php }else{ ?>
+            <li class="nav-item">
+              <a class="nav-link" href="index.php?pagina=prendas">Prendas</a>
+            </li>
+          <?php } ?>
+          <!-- telas -->
+          <?php if($_GET['pagina']=="telas"){ ?>
+            <li class="nav-item">
+              <a class="nav-link active" href="index.php?pagina=telas">Telas</a>
+            </li>
+          <?php }else{ ?>
+            <li class="nav-item">
+              <a class="nav-link" href="index.php?pagina=telas">Telas</a>
+            </li>
+          <?php } 
+          } 
+        ?>
+
+      <?php }else{ ?>
         <li class="nav-item">
           <a class="nav-link active" href="index.php?pagina=listado">Listado de prendas</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="index.php?pagina=prendas">Prendas</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="index.php?pagina=telas">Telas</a>
-        </li>
-    <?php endif ?>
+        <?php  if($_SESSION['user'] == 'cavila') {  ?>
+          <li class="nav-item">
+            <a class="nav-link" href="index.php?pagina=prendas">Prendas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.php?pagina=telas">Telas</a>
+          </li>
+    <?php } 
+  }
+  ?>
   </div>
 </div>
 
   <div>
       <?php
-        $paginas = ["prendas","telas","listado","editarTela","editarPrenda","login"];
         if(isset($_GET['pagina'])){
           if(in_array($_GET['pagina'],$paginas)){
             include_once("paginas/".$_GET['pagina'].".php");
