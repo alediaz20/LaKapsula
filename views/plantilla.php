@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="views/dist/css/adminlte.min.css">
   <link rel="stylesheet" href="css/custom.css">
 </head>
-<body style="font-family: 'Jost', sans-serif;">
+<body style="font-family: 'Jost', sans-serif;" class="bg-secondary">
 <?php
   if($_SESSION['user'] == 'cavila'){
       $paginas = ["prendas","telas","listado","editarTela","editarPrenda","login"];
@@ -23,16 +23,16 @@
     $paginas = ["listado","login"];
   }
 ?>
-<div class="container-fluid bg-light mb-5">
-  <div class="nav nav-justified py-2 nav-pills">
+<div class="container-fluid mb-5">
+  <div class="nav nav-justified py-2 nav-pills bg-kuality">
     <?php if(isset($_GET['pagina'])){ ?>
       <!-- listado -->
       <?php if($_GET['pagina']=="listado"){ ?>
-        <li class="nav-item">
+        <li class="nav-item bg-kuality">
           <a class="nav-link active" href="index.php?pagina=listado">Listado de prendas</a>
         </li>
       <?php }else{ ?>
-        <li class="nav-item">
+        <li class="nav-item bg-kuality">
           <a class="nav-link" href="index.php?pagina=listado">Listado de prendas</a>
         </li>
       <?php } ?>

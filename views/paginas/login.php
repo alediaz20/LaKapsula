@@ -15,12 +15,12 @@
     <link rel="stylesheet" href="views/dist/css/adminlte.min.css">
 <link rel="stylesheet" href="css/custom.css">
 </head>
-<body style="font-family: 'Jost', sans-serif;">
+<body style="font-family: 'Jost', sans-serif;" class="bg-secondary">
 <div class="container-login100">
 <div class="wrap-login100">
-    <div class="card card-outline card-primary">
-        <div class="card-header text-center">
-            <a class="h1"><b>Kuali</b>ty</a>
+    <div class="card bg-kuality">
+        <div class="card-header text-center justify-content-center">
+            <img src="../../imgs/mainlogo2.png" alt="La Kapsula" height="50%" width="50%">
         </div>
         <div class="card-body">
             <form action="ajax/login.php" method="post">
@@ -28,7 +28,7 @@
                     <input type="text" class="form-control" placeholder="User" name="user">
                     <div class="input-group-append">
                         <div class="input-group-text">
-                            <span class="fas fa-envelope"></span>
+                            <span class="fas fa-user"></span>
                         </div>
                     </div>
                 </div>
@@ -36,13 +36,13 @@
                     <input type="password" class="form-control" placeholder="Password" name="password">
                     <div class="input-group-append">
                         <div class="input-group-text">
-                            <span class="fas fa-lock"></span>
+                            <span class="fas fa-key"></span>
                         </div>
                     </div>
                 </div>
-                <div class="container">
+                <div>
                     <div class="text-center">
-                        <button type="submit" class="btn btn-primary btn-block">Ingresar</button>
+                        <button type="submit" class="btn btn-kuality">Ingresar</button>
                     </div>
                 </div>
             </form>

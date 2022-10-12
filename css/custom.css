@@ -63,3 +63,29 @@
     border-radius: 10px;
     position: relative;
   }
+
+  .nav-pills .nav-link.active, .nav-pills .show>.nav-link{
+    background-color: rgba(3, 130, 134, 0.795);
+  }
+
+  .nav-pills .nav-link:not(.active):hover{
+    color:white;
+  }
+
+  .nav-pills .nav-link:not(.active){
+    color:white;
+  }
+
+  .card-header{
+    background-color: rgba(3, 130, 134, 0.795) !important;
+    color:white !important;
+  }
+
+  .card-body{
+    color:black !important;
+  }
+
+.btn-primary{
+  background-color: rgba(3, 130, 134, 0.795) !important;
+  color:white !important;
+}
