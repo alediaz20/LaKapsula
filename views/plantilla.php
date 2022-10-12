@@ -95,11 +95,10 @@
   </div>
 
   <footer class="mt-5">
-    <div class="container-telas">
-      <div class="col-md-12 col-sm-12 col-xs-12">
-        <p class="copyright-text">Copyright &copy; 2022 All Rights Reserved by Alejandro Diaz
-        </p>
-      </div>
+      <div class="col-md-12 col-sm-12 col-xs-12 d-flex justify-content-between px-4">
+        <p class="copyright-text col-5 inline-block">Copyright &copy; 2022 All Rights Reserved by Alejandro Diaz</p>
+        <img src="../imgs/mainlogo.png" alt="" class="text-end" height="25rem" width="25rem">
+        <img src="../imgs/cavila.png" alt="" class="text-end" height="25rem" width="25rem">
     </div>
   </footer>
   <!-- REQUIRED SCRIPTS -->

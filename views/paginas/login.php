@@ -21,8 +21,10 @@
     <div class="container-login100">
         <div class="wrap-login100">
             <div class="card bg-kuality">
-                <div class="card-header text-center justify-content-center">
-                    <img src="../../imgs/mainlogo2.png" alt="La Kapsula" height="50%" width="50%">
+                <div class="card-header text-center d-flex justify-content-around px-2">
+                <img src="../imgs/mainlogo.png" alt="" height="50rem" width="50rem">
+                <img src="../../imgs/mainlogo2.png" alt="La Kapsula" height="50%" width="50%">
+                <img src="../imgs/cavila.png" alt="" height="50rem" width="50rem">
                 </div>
                 <div class="card-body">
                     <form action="ajax/login.php" method="post">
@@ -55,15 +57,11 @@
         </div>
     </div>
     </div>
-
     <footer class="mt-5">
-        <div class="container-telas">
-            <div class="col-md-12 col-sm-12 col-xs-12">
-                <p class="copyright-text">Copyright &copy; 2022 All Rights Reserved by Alejandro Diaz
-                </p>
-            </div>
+        <div class="col-md-12 col-sm-12 col-xs-12 d-flex justify-content-between px-4">
+            <p class="copyright-text col-5 inline-block">Copyright &copy; 2022 All Rights Reserved by Alejandro Diaz</p>
         </div>
-        </footer>
+    </footer>
     <script src="../../plugins/jquery/jquery.min.js"></script>
 
     <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
