@@ -8,8 +8,8 @@ const COSTO_CONFECCION = 3000.00;
 // Base de datos
 const DB_HOST = 'localhost';
 const DB_USER = 'id19693949_alediaz';
-const DB_PASSWORD = '123741852';
-const DB_NAME = 'id19693949_capsula';
+const DB_PASSWORD = 'CC_39030116aas';
+const DB_NAME = 'id19693949_lakapsula';
 
 const TBL_PRENDAS = 'prendas';
 const TBL_TELAS = 'telas';
