@@ -36,11 +36,11 @@
         <!-- listado -->
         <?php if ($_GET['pagina'] == "listado") { ?>
           <li class="nav-item bg-kuality">
-            <a class="nav-link active" href="index.php?pagina=listado">Listado de prendas</a>
+            <a class="nav-link active" href="index.php?pagina=listado"><i class="fas fa-list"></i> Listado de prendas</a>
           </li>
         <?php } else { ?>
           <li class="nav-item bg-kuality">
-            <a class="nav-link" href="index.php?pagina=listado">Listado de prendas</a>
+            <a class="nav-link" href="index.php?pagina=listado"><i class="fas fa-list"></i> Listado de prendas</a>
           </li>
         <?php } ?>
 
@@ -48,31 +48,31 @@
           // prendas
           if ($_GET['pagina'] == "prendas") { ?>
             <li class="nav-item">
-              <a class="nav-link active" href="index.php?pagina=prendas">Prendas</a>
+              <a class="nav-link active" href="index.php?pagina=prendas"><i class="fas fa-tshirt"></i> Prendas</a>
             </li>
           <?php } else { ?>
             <li class="nav-item">
-              <a class="nav-link" href="index.php?pagina=prendas">Prendas</a>
+              <a class="nav-link" href="index.php?pagina=prendas"><i class="fas fa-tshirt"></i> Prendas</a>
             </li>
           <?php } ?>
           <!-- telas -->
           <?php if ($_GET['pagina'] == "telas") { ?>
             <li class="nav-item">
-              <a class="nav-link active" href="index.php?pagina=telas">Telas</a>
+              <a class="nav-link active" href="index.php?pagina=telas"><i class="fas fa-scroll"></i> Telas</a>
             </li>
           <?php } else { ?>
             <li class="nav-item">
-              <a class="nav-link" href="index.php?pagina=telas">Telas</a>
+              <a class="nav-link" href="index.php?pagina=telas"><i class="fas fa-scroll"></i> Telas</a>
             </li>
         <?php } ?>
           <!-- Calculadora Vinilo -->
           <?php if ($_GET['pagina'] == "calcvinil") { ?>
             <li class="nav-item">
-              <a class="nav-link active" href="index.php?pagina=calcvinil">Calculadora vinilos</a>
+              <a class="nav-link active" href="index.php?pagina=calcvinil"><i class="fas fa-calculator"></i> Calculadora vinilos</a>
             </li>
           <?php } else { ?>
             <li class="nav-item">
-              <a class="nav-link" href="index.php?pagina=calcvinil">Calculadora vinilos</a>
+              <a class="nav-link" href="index.php?pagina=calcvinil"><i class="fas fa-calculator"></i> Calculadora vinilos</a>
             </li>
         <?php } 
         } ?>
@@ -81,15 +81,18 @@
         </li>
       <?php } else { ?>
         <li class="nav-item">
-          <a class="nav-link active" href="index.php?pagina=listado">Listado de prendas</a>
+          <a class="nav-link active" href="index.php?pagina=listado"><i class="fas fa-list"></i> Listado de prendas</a>
         </li>
         <?php if ($_SESSION['user'] == 'cavila') {  ?>
           <li class="nav-item">
-            <a class="nav-link" href="index.php?pagina=prendas">Prendas</a>
+            <a class="nav-link" href="index.php?pagina=prendas"><i class="fas fa-tshirt"></i> Prendas</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="index.php?pagina=telas">Telas</a>
+            <a class="nav-link" href="index.php?pagina=telas"><i class="fas fa-scroll"></i> Telas</a>
           </li>
+          <li class="nav-item">
+              <a class="nav-link" href="index.php?pagina=calcvinil"><i class="fas fa-calculator"></i> Calculadora vinilos</a>
+            </li>
       <?php } ?>
           <li class="nav-item">
             <a class="nav-link" href="index.php?pagina=salir">Salir <i class="fas fa-sign-out-alt"></i></a>
@@ -115,8 +118,6 @@
   <footer class="mt-5">
       <div class="col-md-12 col-sm-12 col-xs-12 d-flex justify-content-between px-4">
         <p class="copyright-text col-5 inline-block">Copyright &copy; 2022 All Rights Reserved by Alejandro Diaz</p>
-        <img src="../imgs/mainlogo.png" alt="" class="text-end" height="25rem" width="25rem">
-        <img src="../imgs/cavila.png" alt="" class="text-end" height="25rem" width="25rem">
     </div>
   </footer>
   <!-- REQUIRED SCRIPTS -->

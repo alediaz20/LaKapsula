@@ -22,6 +22,5 @@ foreach ($vinilos as $key => $value) {
         <p class="text-info text-center mb-4" id="resultado2">
             Costo del corte $ <?php echo $costo; ?>
         </p>
-        <p class="text-info text-right">Precio actualizado el 19/09/2022</p>
     </div>
 </div>
