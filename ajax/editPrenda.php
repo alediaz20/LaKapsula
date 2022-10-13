@@ -17,5 +17,5 @@ if(isset($_FILES['imagen'])){
 }
 
 if($result){
-    header('Location: http://lakapsula.local/index.php?pagina=prendas');
+    header('Location: http://lakapsula.000webhostapp.com/index.php?pagina=prendas');
 }

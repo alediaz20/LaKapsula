@@ -11,5 +11,5 @@ $sql = "UPDATE $tabla SET `nombre`='".$post['tela_nombre']."',`precio_por_kg`=".
 $result = $mysqli->query($sql);
 
 if($result){
-    header("Location:localhost://http://lakapsula.local/index.php?pagina=telas");
+    header("Location:localhost://http://lakapsula.000webhostapp.com/index.php?pagina=telas");
 }

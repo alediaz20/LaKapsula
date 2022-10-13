@@ -19,4 +19,4 @@ const TBL_VINILOS = 'vinilos';
 const PERMITIDO_LUCAS = ["listado","login","salir"];
 const PERMITIDO_CARO = ["prendas","telas","listado","editarTela","editarPrenda","calcvinil","editarVinilo","login","salir"];
 
-const URL_ajax = "http://capsula.local/ajax";
+const URL_ajax = "http://lakapsula.000webhostapp.com/ajax";
