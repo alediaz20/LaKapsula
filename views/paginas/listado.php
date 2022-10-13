@@ -8,7 +8,7 @@
                     $costoprenda = $costovalue;
                 }
             }
-            $costoTotal = $costoprenda;
+            $costoTotal = $costoprenda + COSTO_VINILO + COSTO_CONFECCION;
     ?>
         <div class="card">
             <!-- header -->

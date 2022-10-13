@@ -7,7 +7,7 @@ $precio_por_tela = array();
 
 foreach ($prendas as $id => $value) {
     $nombre = $value->nombre;
-    $costo[$nombre] = COSTO_VINILO + COSTO_CONFECCION;
+    $costo[$nombre] = 0;
     $telas_de_prenda = explode(",",$value->telas);
     $metros_por_tela = explode(",",$value->metros_por_tela);
     
