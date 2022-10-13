@@ -90,3 +90,10 @@
   background-color: rgba(3, 130, 134, 0.795) !important;
   color:white !important;
 }
+
+body {
+  background-color: rgba(228, 212, 170, 0.44) !important;
+  background-image: url("../imgs/background.png");
+  background-size: contain;
+  background-repeat: repeat;
+}
