@@ -1,4 +1,4 @@
-<div class="px-5">
+<div class="container-telas px-4">
     <div class="card card-info card-borderless">
         <div class="card-header">
             <h3 class="card-title"><i class="fa-solid fa-scissors"></i>
@@ -30,13 +30,13 @@
                 <div class="form-group row">
                     <label for="Alto" class="col-sm-2 col-form-label">Alto</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="alto" placeholder="Alto">
+                        <input type="text" class="form-control form-control-border border-width-2" id="alto" placeholder="Alto">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="ancho" class="col-sm-2 col-form-label">Ancho</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="ancho" placeholder="Ancho">
+                        <input type="text" class="form-control form-control-border border-width-2" id="ancho" placeholder="Ancho">
                     </div>
                 </div>
             </div>
@@ -53,7 +53,7 @@
             <h3 class="card-title">Vinilos</h3>
         </div>
         <div class="card-body">
-            <table class="table table-bordered">
+            <table class="table table-borderless table-hover">
                 <thead>
                     <tr>
                         <th style="width: 10px">Id</th>

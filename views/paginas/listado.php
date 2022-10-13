@@ -15,7 +15,7 @@
             <div class="card-header text-center bg-kuality"><?php echo $value->nombre ?></div>
             <!-- body -->
             <div class="card-body text-center">
-                <img class="" src="imgs/<?php echo $value->id ?>"" alt="portada" width="200" height="100">
+                <img class="" src="imgs/prendas/<?php echo $value->id ?>"" alt="portada" width="200" height="100">
                 <div class="info-box">
                     <span class="info-box-icon bg-kuality"><i class="fas fa-dollar-sign"></i></span>
                     <div class="info-box-content">
