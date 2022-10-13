@@ -3,12 +3,12 @@
         require_once("ajax/getPrendas.php");
         require_once("ajax/calculos.php");
         foreach ($prendas as $key => $value) {
-            foreach($costo as $coso1 => $coso){
-                if($value->nombre == $coso1){
-                    $costoprenda = $coso;
+            foreach($costo as $costokey => $costovalue){
+                if($value->nombre == $costokey){
+                    $costoprenda = $costovalue;
                 }
             }
-            $costoTotal = $costoprenda + COSTO_VINILO + COSTO_CONFECCION;
+            $costoTotal = $costoprenda;
     ?>
         <div class="card">
             <!-- header -->
@@ -24,7 +24,7 @@
                         <span class="info-box-number">$<?php echo ceil($costoprenda) ?></span>
                         <div class="info-box-content">
                             <span class="info-box-text text-kuality">Confección y estampa</span>
-                            <span class="info-box-number">$ <?php echo(COSTO_CONFECCION + COSTO_VINILO ) ?></span>
+                            <span class="info-box-number">$ <?php echo(COSTO_CONFECCION + COSTO_VINILO) ?></span>
                         </div>
                     </div>
                 </div>

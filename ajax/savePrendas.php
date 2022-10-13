@@ -1,23 +1,18 @@
 <?php
-
-
 require_once("connect.php");
 
 $post = $_POST;
-$tabla = 'prendas';
-$sql = "INSERT INTO `prendas`(nombre,telas,metros_por_tela) VALUES ('".$post['prenda_nombre']."','".$post['prenda_telas']."','".$post['metros_por_tela']."')";
+$tabla = TBL_PRENDAS;
+$sql = "INSERT INTO `$table`(nombre,telas,metros_por_tela) VALUES ('".$post['prenda_nombre']."','".$post['prenda_telas']."','".$post['metros_por_tela']."')";
 $result = $mysqli->query($sql);
 
-$sql2 = "SELECT id FROM `prendas` WHERE `nombre` = '".$post['prenda_nombre']."'";
+$sql2 = "SELECT id FROM `$table` WHERE `nombre` = '".$post['prenda_nombre']."'";
 
 $result = $mysqli->query($sql2);
 if($result){
-    // Cycle through results
     while ($row = $result->fetch_object()){
         $prenda[] = $row;
     }
-    // Free result set
-    // $mysqli->next_result();
     $result->close();
 }
 
@@ -28,6 +23,10 @@ $subir_archivo = $directorio.basename($idprenda.".png");
 move_uploaded_file($_FILES['imagen']['tmp_name'], $subir_archivo);
 
 
-if($result){
-    header('Location: http://lakapsula.local/index.php?pagina=prendas');
+if($result){ ?>
+    <script> 
+        window.location.replace(<?php echo DIR_BASE.'pagina=prendas' ?>); 
+    </script>
+<?php
 }
+?>

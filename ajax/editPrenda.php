@@ -4,11 +4,10 @@
 require_once("connect.php");
 $post = $_POST;
 
-$tabla = 'prendas';
+$tabla = TBL_PRENDAS;
 $sql = "UPDATE $tabla SET `nombre`='".$post['prenda_nombre']."',`telas`='".$post['prenda_telas']."',`metros_por_tela`='".$post['metros_por_tela']."' WHERE id=".$post['id'];
 
 $result = $mysqli->query($sql);
-
 
 if(isset($_FILES['imagen'])){
     $directorio = '../imgs/';
@@ -16,6 +15,10 @@ if(isset($_FILES['imagen'])){
     move_uploaded_file($_FILES['imagen']['tmp_name'], $subir_archivo);
 }
 
-if($result){
-    header('Location: http://lakapsula.local/index.php?pagina=prendas');
+if($result){ ?>
+    <script> 
+        window.location.replace(<?php echo DIR_BASE.'pagina=prendas' ?>); 
+    </script>
+<?php
 }
+?>

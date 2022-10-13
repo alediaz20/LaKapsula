@@ -1,4 +1,5 @@
 <?php
+require_once("config.php");
 require_once("connect.php");
 $post = $_POST;
 $sql = "SELECT * FROM `usuarios` where user='".$post['user']."'";
@@ -21,8 +22,7 @@ if($post['password'] == $user[0]->password){
 }
 ?>
 <script> 
-    // window.location.replace('https://lakapsula.000webhostapp.com/index.php?listado.php'); 
-    window.location.replace('http://capsula.local/index.php?listado.php'); 
+    window.location.replace(<?php echo DIR_BASE.'listado.php' ?>); 
 </script>
 
 

@@ -1,14 +1,12 @@
 <?php
 require_once("connect.php");
+$tabla = TBL_TELAS;
 
-$result = $mysqli->query("SELECT * FROM `telas` ORDER BY id");
+$result = $mysqli->query("SELECT * FROM `$tabla` ORDER BY id");
 if($result){
-     // Cycle through results
     while ($row = $result->fetch_object()){
         $telas[] = $row;
     }
-    // Free result set
-    // $mysqli->next_result();
     $result->close();
 }
 

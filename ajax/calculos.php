@@ -3,13 +3,11 @@ require_once("connect.php");
 require_once("getTelas.php");
 require_once("getPrendas.php");
 
-
 $precio_por_tela = array();
-// $costo = COSTO_VINILO + COSTO_CONFECCION;
-// Recorro las prendas
+
 foreach ($prendas as $id => $value) {
     $nombre = $value->nombre;
-    $costo[$nombre] = 0;
+    $costo[$nombre] = COSTO_VINILO + COSTO_CONFECCION;
     $telas_de_prenda = explode(",",$value->telas);
     $metros_por_tela = explode(",",$value->metros_por_tela);
     
@@ -21,9 +19,6 @@ foreach ($prendas as $id => $value) {
     foreach($telas_de_prenda as $key=>$value){
         $telas_de_prenda[$key] = ucwords($value);
     }
-    // foreach($telas_de_prenda as $key => $value){
-    //     $telas_de_prenda[$key] = $metros_por_tela[$key];
-    // }
 
     foreach($telas as $key => $value){
         $telas[$key]->nombre = ucwords($telas[$key]->nombre);
