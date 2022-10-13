@@ -22,7 +22,7 @@ if($_POST['password'] == $user[0]->password){
 }
 ?>
 <script> 
-    window.location.replace('http://capsula.local/index.php?pagina=listado'); 
+    window.location.replace('http://lakapsula.000webhostapp.com/index.php?pagina=telas'); 
 </script>
 
 

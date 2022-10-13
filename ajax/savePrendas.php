@@ -29,5 +29,5 @@ move_uploaded_file($_FILES['imagen']['tmp_name'], $subir_archivo);
 
 
 if($result){
-    header('Location: http://lakapsula.local/index.php?pagina=prendas');
+    header('Location:http://lakapsula.000webhostapp.com/index.php?pagina=telas');
 }
