@@ -36,11 +36,11 @@
         <!-- listado -->
         <?php if ($_GET['pagina'] == "listado") { ?>
           <li class="nav-item bg-kuality">
-            <a class="nav-link active" href="index.php?pagina=listado"><i class="fas fa-list"></i> Listado de prendas</a>
+            <a class="nav-link active" href="index.php?pagina=listado"><i class="fas fa-list"></i><span> Listado de prendas</span></a>
           </li>
         <?php } else { ?>
           <li class="nav-item bg-kuality">
-            <a class="nav-link" href="index.php?pagina=listado"><i class="fas fa-list"></i> Listado de prendas</a>
+            <a class="nav-link" href="index.php?pagina=listado"><i class="fas fa-list"></i><span> Listado de prendas</span></a>
           </li>
         <?php } ?>
 
@@ -48,54 +48,54 @@
           // prendas
           if ($_GET['pagina'] == "prendas") { ?>
             <li class="nav-item">
-              <a class="nav-link active" href="index.php?pagina=prendas"><i class="fas fa-tshirt"></i> Prendas</a>
+              <a class="nav-link active" href="index.php?pagina=prendas"><i class="fas fa-tshirt"></i><span> Prendas</span></a>
             </li>
           <?php } else { ?>
             <li class="nav-item">
-              <a class="nav-link" href="index.php?pagina=prendas"><i class="fas fa-tshirt"></i> Prendas</a>
+              <a class="nav-link" href="index.php?pagina=prendas"><i class="fas fa-tshirt"></i><span> Prendas</span></a>
             </li>
           <?php } ?>
           <!-- telas -->
           <?php if ($_GET['pagina'] == "telas") { ?>
             <li class="nav-item">
-              <a class="nav-link active" href="index.php?pagina=telas"><i class="fas fa-scroll"></i> Telas</a>
+              <a class="nav-link active" href="index.php?pagina=telas"><i class="fas fa-scroll"></i><span> Telas</span></a>
             </li>
           <?php } else { ?>
             <li class="nav-item">
-              <a class="nav-link" href="index.php?pagina=telas"><i class="fas fa-scroll"></i> Telas</a>
+              <a class="nav-link" href="index.php?pagina=telas"><i class="fas fa-scroll"></i><span> Telas</span></a>
             </li>
         <?php } ?>
           <!-- Calculadora Vinilo -->
           <?php if ($_GET['pagina'] == "calcvinil") { ?>
             <li class="nav-item">
-              <a class="nav-link active" href="index.php?pagina=calcvinil"><i class="fas fa-calculator"></i> Calculadora vinilos</a>
+              <a class="nav-link active" href="index.php?pagina=calcvinil"><i class="fas fa-calculator"></i><span> Calculadora vinilos</span></a>
             </li>
           <?php } else { ?>
             <li class="nav-item">
-              <a class="nav-link" href="index.php?pagina=calcvinil"><i class="fas fa-calculator"></i> Calculadora vinilos</a>
+              <a class="nav-link" href="index.php?pagina=calcvinil"><i class="fas fa-calculator"></i><span> Calculadora vinilos</span></a>
             </li>
         <?php } 
         } ?>
         <li class="nav-item">
-          <a class="nav-link" href="index.php?pagina=salir">Salir <i class="fas fa-sign-out-alt"></i></a>
+          <a class="nav-link" href="index.php?pagina=salir">Salir <i class="fas fa-sign-out-alt"></i><span> </a>
         </li>
       <?php } else { ?>
         <li class="nav-item">
-          <a class="nav-link active" href="index.php?pagina=listado"><i class="fas fa-list"></i> Listado de prendas</a>
+          <a class="nav-link active" href="index.php?pagina=listado"><i class="fas fa-list"></i><span> Listado de prendas</span></a>
         </li>
         <?php if ($_SESSION['user'] == 'cavila') {  ?>
           <li class="nav-item">
-            <a class="nav-link" href="index.php?pagina=prendas"><i class="fas fa-tshirt"></i> Prendas</a>
+            <a class="nav-link" href="index.php?pagina=prendas"><p>Prendas</p></span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="index.php?pagina=telas"><i class="fas fa-scroll"></i> Telas</a>
+            <a class="nav-link" href="index.php?pagina=telas"><i class="fas fa-scroll"></i><span> Telas</span></a>
           </li>
           <li class="nav-item">
-              <a class="nav-link" href="index.php?pagina=calcvinil"><i class="fas fa-calculator"></i> Calculadora vinilos</a>
+              <a class="nav-link" href="index.php?pagina=calcvinil"><i class="fas fa-calculator"></i><span> Calculadora vinilos</span></a>
             </li>
       <?php } ?>
           <li class="nav-item">
-            <a class="nav-link" href="index.php?pagina=salir">Salir <i class="fas fa-sign-out-alt"></i></a>
+            <a class="nav-link" href="index.php?pagina=salir">Salir <i class="fas fa-sign-out-alt"></i><span> </a>
           </li>
     <?php } ?>
     </div>

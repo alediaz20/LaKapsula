@@ -31,7 +31,7 @@
             <h3 class="card-title">Telas</h3>
         </div>
         <div class="card-body">
-            <table class="table table-borderless table-hover">
+            <table class="table table-borderless table-hover table-responsive">
                 <thead>
                     <tr>
                         <th style="width: 10px">Id</th>

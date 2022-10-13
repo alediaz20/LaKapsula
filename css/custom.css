@@ -11,7 +11,18 @@
     grid-auto-rows: auto;
     gap: 20px;
 }
+@media (max-width: 922px) {
+  .container-telas{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(100%,1fr));
+    grid-auto-rows: auto;
+    gap: 20px;
+  }
 
+  span {
+    display:none;
+  }
+}
 .btn-kuality {
     color: #fff;
     background-color: rgb(3 152 158);
