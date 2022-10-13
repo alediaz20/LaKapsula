@@ -1,8 +1,8 @@
 <?php
 require_once("config.php");
 require_once("connect.php");
-$post = $_POST;
-$sql = "SELECT * FROM `usuarios` where user='".$post['user']."'";
+$usuario = strtolower($_POST['user']);
+$sql = "SELECT * FROM `usuarios` where user='".$usuario."'";
 $result = $mysqli->query($sql);
 if($result){
      // Cycle through results
@@ -14,7 +14,7 @@ if($result){
     return ("El usuario no existe");
 }
 
-if($post['password'] == $user[0]->password){
+if($_POST['password'] == $user[0]->password){
     session_start();
     $_SESSION['user'] = $user[0]->user;
 }else{
@@ -22,7 +22,7 @@ if($post['password'] == $user[0]->password){
 }
 ?>
 <script> 
-    window.location.replace(<?php echo DIR_BASE.'listado.php' ?>); 
+    window.location.replace('http://capsula.local/index.php?pagina=listado'); 
 </script>
 
 

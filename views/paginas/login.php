@@ -13,7 +13,7 @@
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Theme style -->
-    <link rel="stylesheet" href="views/dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="css/adminlte.min.css">
     <link rel="stylesheet" href="css/custom.css">
 </head>
 
@@ -21,10 +21,10 @@
     <div class="container-login100">
         <div class="wrap-login100">
             <div class="card bg-kuality">
-                <div class="card-header text-center d-flex justify-content-around px-2">
-                <img src="../imgs/mainlogo.png" alt="" height="50rem" width="50rem">
+                <div class="card-header text-center d-flex justify-content-around p3">
+                <img src="../imgs/mainlogo.png" alt="" height="60rem" width="60rem">
                 <img src="../../imgs/mainlogo2.png" alt="La Kapsula" height="50%" width="50%">
-                <img src="../imgs/cavila.png" alt="" height="50rem" width="50rem">
+                <img src="../imgs/cavila.png" alt="" height="60rem" width="100rem">
                 </div>
                 <div class="card-body">
                     <form action="ajax/login.php" method="post">
@@ -51,9 +51,7 @@
                         </div>
                     </form>
                 </div>
-
             </div>
-
         </div>
     </div>
     </div>
