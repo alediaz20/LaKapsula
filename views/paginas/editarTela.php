@@ -10,27 +10,26 @@ foreach ($telas as $key => $value){
 
 
 ?>
-
-<div class="container-telas p-3">
+<div class="px-4">
     <div class="card card-primary">
         <div class="card-header"><h3 class="card-title">Nueva tela</h3></div> 
         <form method="post" name="telas" action="ajax/editTela.php">
             <div class="card-body">
-                <input type="text" class="form-control" name="id" placeholder="Tela" value="<?php echo $id?>" hidden>
+                <input type="text" class="form-control form-control-border border-width-2" name="id" placeholder="Tela" value="<?php echo $id?>" hidden>
                 <div class="form-group">
                     <label for="tela_nombre">Tela</label>
-                    <input type="text" class="form-control" name="tela_nombre" placeholder="Tela" value="<?php echo $tela->nombre?>">
+                    <input type="text" class="form-control form-control-border border-width-2" name="tela_nombre" placeholder="Tela" value="<?php echo $tela->nombre?>">
                 </div>
                 <label for="tela_precio">Precio x Kg</label>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="fas fa-dollar-sign"></i></span>
+                        <span class="btn btn-info btn-flat"><i class="fas fa-dollar-sign"></i></span>
                     </div>
-                    <input type="number" class="form-control" name="tela_precio" placeholder="Precio" value ="<?php echo $tela->precio_por_kg?>">
+                    <input type="number" class="form-control form-control-border border-width-2" name="tela_precio" placeholder="Precio" value ="<?php echo $tela->precio_por_kg?>">
                 </div>
                 <div class="form-group">
                     <label for="tela_rendimiento">Metros por kg</label>
-                    <input type="text" class="form-control" name="tela_rendimiento" placeholder="Cuantos metros rinde un kg" value ="<?php echo $tela->metros_por_kg?>">
+                    <input type="text" class="form-control form-control-border border-width-2" name="tela_rendimiento" placeholder="Cuantos metros rinde un kg" value ="<?php echo $tela->metros_por_kg?>">
                 </div>
             </div>  
             <div class="card-footer">

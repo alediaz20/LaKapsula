@@ -1,23 +1,23 @@
 
-<div class="container-telas p-3">
+<div class="container-telas px-4">
     <div class="card card-primary">
         <div class="card-header"><h3 class="card-title">Nueva tela</h3></div> 
         <form method="post" name="telas" action="ajax/saveTelas.php">
             <div class="card-body">
                 <div class="form-group">
                     <label for="tela_nombre">Tela</label>
-                    <input type="text" class="form-control" name="tela_nombre" placeholder="Tela">
+                    <input type="text" class="form-control form-control-border border-width-2" name="tela_nombre" placeholder="Tela">
                 </div>
                 <label for="tela_precio">Precio x Kg</label>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="fas fa-dollar-sign"></i></span>
+                        <span class="btn btn-info btn-flat"><i class="fas fa-dollar-sign"></i></span>
                     </div>
-                    <input type="number" class="form-control" name="tela_precio" placeholder="Precio">
+                    <input type="number" class="form-control form-control-border border-width-2" name="tela_precio" placeholder="Precio">
                 </div>
                 <div class="form-group">
                     <label for="tela_rendimiento">Metros por kg</label>
-                    <input type="text" class="form-control" name="tela_rendimiento" placeholder="Cuantos metros rinde un kg">
+                    <input type="text" class="form-control form-control-border border-width-2" name="tela_rendimiento" placeholder="Cuantos metros rinde un kg">
                 </div>
             </div>  
             <div class="card-footer">
@@ -31,7 +31,7 @@
             <h3 class="card-title">Telas</h3>
         </div>
         <div class="card-body">
-            <table class="table table-bordered">
+            <table class="table table-borderless table-hover">
                 <thead>
                     <tr>
                         <th style="width: 10px">Id</th>
