@@ -1,12 +1,12 @@
 <?php
-
-
+require_once("config.php");
 require_once("connect.php");
+
 $post = $_POST;
 
 $tabla = 'prendas';
-$sql = "UPDATE $tabla SET `nombre`='".$post['prenda_nombre']."',`telas`='".$post['prenda_telas']."',`metros_por_tela`='".$post['metros_por_tela']."' WHERE id=".$post['id'];
 
+$sql = "UPDATE $tabla SET `nombre`='".$post['prenda_nombre']."',`telas`='".$post['prenda_telas']."',`metros_por_tela`='".$post['metros_por_tela']."' WHERE id=".$post['id'];
 $result = $mysqli->query($sql);
 
 

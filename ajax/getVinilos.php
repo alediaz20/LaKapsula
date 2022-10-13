@@ -1,4 +1,5 @@
 <?php
+require_once("config.php");
 require_once("connect.php");
 $tabla = TBL_VINILOS;
 
@@ -10,4 +11,4 @@ if($result){
     $result->close();
 }
 
-var_dump($vinilos);
+
