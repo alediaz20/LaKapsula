@@ -9,5 +9,5 @@ $result = $mysqli->query($sql);
 
 ?>
 <script> 
-    window.location.replace('http://capsula.local/index.php?pagina=calcvinil'); 
+    window.location.replace('http://lakapsula.000webhostapp.com/index.php?pagina=calcvinil'); 
 </script>
