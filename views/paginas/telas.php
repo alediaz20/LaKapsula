@@ -1,5 +1,5 @@
 
-<div class="container-telas px-4">
+<div class="container-telas px-1">
     <div class="card card-primary">
         <div class="card-header"><h3 class="card-title">Nueva tela</h3></div> 
         <form method="post" name="telas" action="ajax/saveTelas.php">
@@ -31,7 +31,7 @@
             <h3 class="card-title">Telas</h3>
         </div>
         <div class="card-body">
-            <table class="table table-borderless table-hover">
+            <table class="table table-borderless table-hover table-responsive">
                 <thead>
                     <tr>
                         <th style="width: 10px">Id</th>

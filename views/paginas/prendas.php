@@ -1,7 +1,6 @@
-<div class="container-telas px-4">
+<div class="container-telas px-1">
     <div class="card card-primary">
         <div class="card-header"><h3 class="card-title">Nueva prenda</h3></div> 
-        
         <form method="post" name="prendas" action="../ajax/savePrendas.php" enctype="multipart/form-data">
             <div class="card-body">
                 <div class="form-group">
@@ -32,7 +31,7 @@
             <h3 class="card-title">Prendas</h3>
         </div>
         <div class="card-body">
-            <table class="table table-borderless table-hover">
+            <table class="table table-borderless table-hover table-responsive">
                 <thead>
                     <tr>
                         <th style="width: 10px">Id</th>
