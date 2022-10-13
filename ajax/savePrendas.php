@@ -23,11 +23,11 @@ if($result){
 
 $idprenda = $prenda[0]->id;
 
-$directorio = '../imgs/';
+$directorio = '../imgs/prendas/';
 $subir_archivo = $directorio.basename($idprenda.".png");
 move_uploaded_file($_FILES['imagen']['tmp_name'], $subir_archivo);
 
 
 if($result){
-    header('Location: http://lakapsula.000webhostapp.com/index.php?pagina=prendas');
+    header('Location: http://lakapsula.local/index.php?pagina=prendas');
 }
