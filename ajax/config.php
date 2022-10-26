@@ -16,11 +16,11 @@ const COSTO_CONFECCION = 1700.00;
 
 const DB_HOST = 'localhost';
 
-const DB_USER = 'root';
+const DB_USER = 'id19693949_alediaz';
 
-const DB_PASSWORD = '';
+const DB_PASSWORD = 'CC_39030116aas';
 
-const DB_NAME = 'capsula';
+const DB_NAME = 'id19693949_lakapsula';
 
 
 
@@ -40,5 +40,5 @@ const PERMITIDO_CARO = ["prendas","telas","listado","editarTela","editarPrenda",
 
 
 
-const URL_ajax = "http://lakapsula.local/ajax";
-const URL_local = "http://lakapsula.local/";
+const URL_ajax = "http://lakapsula.000webhostapp.com/ajax";
+const URL_local = "https://lakapsula.000webhostapp.com/";
