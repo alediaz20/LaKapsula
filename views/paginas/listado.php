@@ -12,7 +12,7 @@
 
                 if($value->nombre == $costokey){
 
-                    $costoprenda = $costovalue;
+                    $costoprenda = $costovalue['precio'];
 
                 }
 
