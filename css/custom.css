@@ -1,92 +1,110 @@
-.container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(20rem,1fr));
-    grid-auto-rows: auto;
-    gap: 20px;
-}
-
-.container-telas {
-    display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(40rem,2fr));
-    grid-auto-rows: auto;
-    gap: 20px;
-}
-
-.btn-kuality {
-    color: #fff;
-    background-color: rgb(3 152 158);
-    border-color: rgb(3 152 158);
-    box-shadow: none;
-  }
-  
-  .btn-kuality:hover {
-    color: #fff;
-    background-color: rgb(3, 130, 134);
-    border-color: rgb(3, 130, 134);
-  }
-  
-  .btn-kuality:focus, .btn-kuality.focus {
-    color: #fff;
-    background-color:  rgb(3, 130, 134);
-    border-color: rgb(3, 130, 134);
-    box-shadow: 0 0 0 0 rgb(3, 130, 134);
-  }
-
-  .text-kuality {
-    color:  rgb(3, 130, 134);
-  }
-
-  .bg-kuality {
-    background-color:  rgb(3, 130, 134);
-    color: white;
-  }
-
-  .container-login100 {
-    width: 100%;  
-    min-height: 90vh;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    padding: 15px;
-    
-    /* background-color: #ebebeb; */
-  }
-
-  .wrap-login100 {
-    width: 560px;
-    background: #fff;
-    border-radius: 10px;
-    position: relative;
-  }
-
-  .nav-pills .nav-link.active, .nav-pills .show>.nav-link{
-    background-color: white;
-    color: rgba(3, 130, 134, 0.795) !important;
-  }
-
-  .nav-pills .nav-link:not(.active):hover{
-    color:white;
-  }
-
-  .nav-pills .nav-link:not(.active){
-    color:white;
-  }
-
-  .card-header{
-    background-color: rgba(3, 130, 134, 0.795) !important;
-    color:white !important;
-  }
-
-  .card-body{
-    color:black !important;
-  }
-
-.btn-primary{
-  background-color: rgba(3, 130, 134, 0.795) !important;
-  color:white !important;
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(20rem,1fr));
+    grid-auto-rows: auto;
+    gap: 20px;
+}
+
+.container-telas {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(40rem,2fr));
+    grid-auto-rows: auto;
+    gap: 20px;
+}
+@media (max-width: 922px) {
+  .container-telas{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(100%,1fr));
+    grid-auto-rows: auto;
+    gap: 20px;
+  }
+
+  span {
+    display:none;
+  }
+}
+.btn-kuality {
+    color: #fff;
+    background-color: rgb(3 152 158);
+    border-color: rgb(3 152 158);
+    box-shadow: none;
+  }
+  
+  .btn-kuality:hover {
+    color: #fff;
+    background-color: rgb(3, 130, 134);
+    border-color: rgb(3, 130, 134);
+  }
+  
+  .btn-kuality:focus, .btn-kuality.focus {
+    color: #fff;
+    background-color:  rgb(3, 130, 134);
+    border-color: rgb(3, 130, 134);
+    box-shadow: 0 0 0 0 rgb(3, 130, 134);
+  }
+
+  .text-kuality {
+    color:  rgb(3, 130, 134);
+  }
+
+  .bg-kuality {
+    background-color:  rgb(3, 130, 134);
+    color: white;
+  }
+
+  .container-login100 {
+    width: 100%;  
+    min-height: 90vh;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    
+    /* background-color: #ebebeb; */
+  }
+
+  .wrap-login100 {
+    width: 560px;
+    background: #fff;
+    border-radius: 10px;
+    position: relative;
+  }
+
+  .nav-pills .nav-link.active, .nav-pills .show>.nav-link{
+    background-color: white;
+    color: rgba(3, 130, 134, 0.795) !important;
+  }
+
+  .nav-pills .nav-link:not(.active):hover{
+    color:white;
+  }
+
+  .nav-pills .nav-link:not(.active){
+    color:white;
+  }
+
+  .card-header{
+    background-color: rgba(3, 130, 134, 0.795) !important;
+    color:white !important;
+  }
+
+  .card-body{
+    color:black !important;
+  }
+
+.btn-primary{
+  background-color: rgba(3, 130, 134, 0.795) !important;
+  color:white !important;
+}
+
+body {
+  background-image: url("../imgs/background.png");
+  background-color: rgba(228, 212, 170, 0.44);
+  background-size: contain;
+  background-repeat: repeat;
 }
