@@ -47,4 +47,4 @@ const PAGINAS_CARO = [
 const TALLES = ["4","8","12","16","S","M","L","XL","XXL"];
 
 const URL_ajax = "http://lakapsula.000webhostapp.com/ajax";
-const URL_local = "https://lakapsula.000webhostapp.com/";
+const URL_local = "http://lakapsula.000webhostapp.com/";

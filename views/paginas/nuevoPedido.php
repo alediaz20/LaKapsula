@@ -51,7 +51,7 @@
                         <div class="input-group-prepend">
                             <span class="btn btn-info btn-flat"><i class="fas fa-dollar-sign"></i></span>
                         </div>
-                        <input type="text" class="form-control form-control-border border-width-2" name="entrega" placeholder="Entrega">
+                        <input type="text" class="form-control form-control-border border-width-2" name="entrega" placeholder="Entrega" value="0">
                     </div>
                 </div>
             </div>

@@ -83,21 +83,25 @@
                                     echo date_format($fecha_entrega,"d/m/Y"); 
                                 }
                             ?></td>
-                                <td>
+                                    <?php if($value->fecha_entrega == "0000-00-00 00:00:00"){ ?>
+                                    <td>
                                     <form method="post" name="entregarPrenda" action="ajax/entregarPrenda.php">
                                         <input type="text" name="id" value="<?php echo $value->id ?>"hidden>
                                         <input type="submit" class="btn btn-primary" value="Entregar"></input>                                        
                                     </form>
-                                </td>
+                                    </td>
+                                    <?php } else { ?>
+                                        <td><button class="btn btn-success">ENTREGADO</button></td> 
+                                <?php } ?>
                                 <td>
                                     <form method="post" name="eliminarPedido" action="ajax/eliminarPedido.php">
                                         <input type="text" name="id" value="<?php echo $value->id ?>"hidden>
-                                        <input type="submit" class="btn btn-primary" value="Eliminar"></input>                                        
+                                        <input type="submit" class="btn btn-danger" value="Eliminar"></input>                                        
                                     </form>
                                 </td>
                                 <td>
                                     <input type="text" name="id" value="<?php echo $value->id ?>"hidden>
-                                    <a href="index.php?pagina=agregarDinero&id=<?php echo $value->id ?>" class="btn btn-info">Agregar dinero</a>
+                                    <a href="index.php?pagina=agregarDinero&id=<?php echo $value->id ?>" class="btn btn-primary">Agregar dinero</a>
                                 </td>
                         </tr>
                     <?php }}else{?>
