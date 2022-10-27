@@ -59,8 +59,6 @@
   include_once("footer.php");
 ?>
 
-  <script src="views/plugins/jquery/jquery.min.js"></script>
-  <script src="views/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="js/sweetalert2.all.min.js"></script>
+  <script src="../js/sweetalert2.all.min.js"></script>
 </body>
 </html>

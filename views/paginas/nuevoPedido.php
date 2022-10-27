@@ -7,7 +7,7 @@
         <div class="card-header">
             <h3 class="card-title">Nueva pedido</h3>
         </div>
-        <form method="post" name="prendas" action="../ajax/nuevoPedido.php" enctype="multipart/form-data">
+        <form method="post" name="pedido" id="pedido" action="../ajax/nuevoPedido.php">
             <div class="card-body">
                 <div class="form-group">
                     <label for="prenda_nombre">Prenda</label>
@@ -34,12 +34,12 @@
                 </div>
                 <div class="form-group">
                     <label for="nombre">Nombre y apellido</label>
-                    <input type="text" class="form-control form-control-border border-width-2" name="nombre" placeholder="Nombre y apellido">
+                    <input type="text" class="form-control form-control-border border-width-2" name="nombre" id="nombre" placeholder="Nombre y apellido">
                 </div>
                 <div class="form-group">
                     <label for="talle">Talle</label>
                     <select name="talle" id="talle">
-                    <option>Seleccione una talle</option>
+                        <option>Seleccione un talle</option>
                         <?php foreach(TALLES as $key => $value){ ?>
                             <option><?php echo $value ?></option>
                         <?php } ?>
@@ -62,9 +62,5 @@
     </div>
 </div>
 
-<script>
-    function actualizarPrecio(precio,id_prenda){
-        document.getElementById("precio").value = precio;
-        document.getElementById("id_prenda").value = id_prenda;
-}
-</script>
+<script src="../js/pedidos.js"></script>
+<script src="../js/sweetalert2.all.min.js"></script>
