@@ -18,6 +18,11 @@
   <link rel="stylesheet" href="css/adminlte.min.css">
   <link rel="stylesheet" href="css/custom.css">
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
+  <!-- datatable -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.12.1/datatables.min.css"/>
+  <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.12.1/datatables.min.js"></script>
+
 </head>
 
 <body style="font-family: 'Jost', sans-serif;">

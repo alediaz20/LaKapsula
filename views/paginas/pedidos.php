@@ -37,92 +37,85 @@
             <h3 class="card-title">Pedidos</h3>
         </div>
         <div class="card-body">
-            <table class="table table-borderless table-hover table-responsive">
-            <?php if(isset($pedidos)){ ?>
-            <thead>
-                    <tr>
-                        <th>Nro Pedido</th>
-                        <th>Prenda</th>
-                        <th>Talle</th>
-                        <th>Nombre</th>
-                        <th>Precio</th>
-                        <th>Entrega</th>
-                        <th>Resto</th>
-                        <th>Fecha Pedido</th>
-                        <th>Entregado a cliente</th>
-                        <th>Marcar como entregado</th>
-                        <th>Eliminar</th>
-                        <th>Agregar dinero</th>
-                    </tr>
-                </thead>
-                <tbody>
+<table class="table table-borderless table-hover table-responsive" id="pedidos">
+<?php if(isset($pedidos)){ ?>
+<thead>
+        <tr>
+            <th>Nro Pedido</th>
+            <th>Prenda</th>
+            <th>Talle</th>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Entrega</th>
+            <th>Resto</th>
+            <th>Fecha Pedido</th>
+            <th>Entregado a cliente</th>
+            <th>Marcar como entregado</th>
+            <th>Eliminar</th>
+            <th>Agregar dinero</th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php 
+        foreach ($pedidos as $key => $value) { ?>
+            <tr>
+                <td><?php echo $value->id; ?></td>
+                <td><?php echo $value->prenda; ?></td>
+                <td><?php echo $value->talle; ?></td>
+                <td><?php echo $value->nombre_apellido; ?></td>
+                <td>$<?php echo $value->precio; ?></td>
+                <td>$<?php echo $value->entrega; ?></td>
                 <?php 
-                    foreach ($pedidos as $key => $value) { ?>
-                        <tr>
-                            <td><?php echo $value->id; ?></td>
-                            <td><?php echo $value->prenda; ?></td>
-                            <td><?php echo $value->talle; ?></td>
-                            <td><?php echo $value->nombre_apellido; ?></td>
-                            <td>$<?php echo $value->precio; ?></td>
-                            <td>$<?php echo $value->entrega; ?></td>
-                            <?php 
-                                if($value->resto <= 0){ ?>
-                            <td class="bg-success">PAGADO</td> 
-                                <?php }else{ ?>
-                                    <td>$<?php echo $value->resto;?> </td>
-                                <?php } ?>
-                            </td>
-                                
-                            <td><?php $fecha = date_create($value->fecha_pedido); 
-                                        echo date_format($fecha,"d/m/Y"); ?></td>
-                            <td><?php
-                                if($value->fecha_entrega == "0000-00-00 00:00:00"){?>
-                                    NO
-                                <?php }else{
-                                    $fecha_entrega = date_create($value->fecha_entrega); 
-                                    echo date_format($fecha_entrega,"d/m/Y"); 
-                                }
-                            ?></td>
-                                    <?php if($value->fecha_entrega == "0000-00-00 00:00:00"){ ?>
-                                    <td>
-                                    <form method="post" name="entregarPrenda" action="ajax/entregarPrenda.php">
-                                        <input type="text" name="id" value="<?php echo $value->id ?>"hidden>
-                                        <input type="submit" class="btn btn-primary" value="Entregar"></input>                                        
-                                    </form>
-                                    </td>
-                                    <?php } else { ?>
-                                        <td><button class="btn btn-success">ENTREGADO</button></td> 
-                                <?php } ?>
-                                <td>
-                                    <form method="post" name="eliminarPedido" action="ajax/eliminarPedido.php">
-                                        <input type="text" name="id" value="<?php echo $value->id ?>"hidden>
-                                        <input type="submit" class="btn btn-danger" value="Eliminar"></input>                                        
-                                    </form>
-                                </td>
-                                <td>
-                                    <input type="text" name="id" value="<?php echo $value->id ?>"hidden>
-                                    <a href="index.php?pagina=agregarDinero&id=<?php echo $value->id ?>" class="btn btn-primary">Agregar dinero</a>
-                                </td>
-                        </tr>
-                    <?php }}else{?>
-                        NO HAY PEDIDOS PARA MOSTRAR
+                    if($value->resto <= 0){ ?>
+                <td class="bg-success">PAGADO</td> 
+                    <?php }else{ ?>
+                        <td>$<?php echo $value->resto;?> </td>
                     <?php } ?>
-                </tbody>
-            </table>
-        </div>
+                </td>
+                    
+                <td><?php $fecha = date_create($value->fecha_pedido); 
+                            echo date_format($fecha,"d/m/Y"); ?></td>
+                <td><?php
+                    if($value->fecha_entrega == "0000-00-00 00:00:00"){?>
+                        NO
+                    <?php }else{
+                        $fecha_entrega = date_create($value->fecha_entrega); 
+                        echo date_format($fecha_entrega,"d/m/Y"); 
+                    }
+                ?></td>
+                        <?php if($value->fecha_entrega == "0000-00-00 00:00:00"){ ?>
+                        <td>
+                        <form method="post" name="entregarPrenda" action="ajax/entregarPrenda.php">
+                            <input type="text" name="id" value="<?php echo $value->id ?>"hidden>
+                            <input type="submit" class="btn btn-primary" value="Entregar"></input>                                        
+                        </form>
+                        </td>
+                        <?php } else { ?>
+                            <td><button class="btn btn-success">ENTREGADO</button></td> 
+                    <?php } ?>
+                    <td>
+                        <form method="post" name="eliminarPedido" action="ajax/eliminarPedido.php">
+                            <input type="text" name="id" value="<?php echo $value->id ?>"hidden>
+                            <input type="submit" class="btn btn-danger" value="Eliminar"></input>                                        
+                        </form>
+                    </td>
+                    <td>
+                        <input type="text" name="id" value="<?php echo $value->id ?>"hidden>
+                        <a href="index.php?pagina=agregarDinero&id=<?php echo $value->id ?>" class="btn btn-primary">Agregar dinero</a>
+                    </td>
+            </tr>
+        <?php }}else{?>
+            NO HAY PEDIDOS PARA MOSTRAR
+        <?php } ?>
+    </tbody>
+</table>
+</div>
+
+
+
+
     </div>
     </div>
 
 
-    <script>
-        function entregar(id){
-            var id = document.getElementById
-            $.ajax({
-                    url: "../../ajax/entregarPrenda.php",
-                    type: "POST",
-                    data: id
-                    }).done({
-                        // location.reload()
-                    });
-        }
-    </script>
+    <script src="../js/pedidosListado.js"></script>
