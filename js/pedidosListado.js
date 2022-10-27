@@ -11,8 +11,15 @@ function entregar(id){
 
 $(document).ready(function(){
     $('#pedidos').DataTable({
-        "language":{
-        "url": "https://cdn.datatables.net/plug-ins/1.12.1/i18n/es-ES.json"
-        }
+        dom: 'lBfrtip',
+        buttons: [
+        {
+            extend: 'excel',
+            className: 'dt-button',
+            text: '<i class="fa-solid fa-file-excel"></i> Exportar Excel'
+        }],
+        language:{
+            "url": "https://cdn.datatables.net/plug-ins/1.12.1/i18n/es-ES.json"
+        },
     });
 });
