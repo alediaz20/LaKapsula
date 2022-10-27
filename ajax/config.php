@@ -4,9 +4,9 @@ const COSTO_CONFECCION = 1700.00;
 
 // Base de datos
 const DB_HOST = 'localhost';
-const DB_USER = 'root';
-const DB_PASSWORD = '';
-const DB_NAME = 'capsula';
+const DB_USER = 'id19693949_alediaz';
+const DB_PASSWORD = 'CC_39030116aas';
+const DB_NAME = 'id19693949_lakapsula';
 
 const TBL_PRENDAS = 'prendas';
 const TBL_TELAS = 'telas';
@@ -47,4 +47,4 @@ const PAGINAS_CARO = [
 const TALLES = ["4","8","12","16","S","M","L","XL","XXL"];
 
 const URL_ajax = "http://lakapsula.000webhostapp.com/ajax";
-const URL_local = "http://capsula.local/";
+const URL_local = "http://lakapsula.000webhostapp.com/";
