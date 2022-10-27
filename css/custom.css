@@ -149,3 +149,18 @@ body {
 
   background-repeat: repeat;
 }
+
+.dataTables_wrapper .dt-buttons {
+  float:right !important;
+}
+
+.dt-buttons .dt-button{
+  color: white !important;
+  background-color: rgb(3 152 158) !important;
+  background-image: none !important;
+  border-color: rgb(3 152 158) !important;
+  box-shadow: none !important;
+  padding: 6px !important;
+  margin-left: 10px !important;
+  
+}
