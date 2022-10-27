@@ -164,3 +164,15 @@ body {
   margin-left: 10px !important;
   
 }
+
+.paginate_button.current,
+.paginate_button.previous,
+.paginate_button.next{
+  color: white !important;
+  background-color: rgb(3 152 158) !important;
+  background-image: none !important;
+  border-color: rgb(3 152 158) !important;
+  box-shadow: none !important;
+  padding: 6px !important;
+  margin-left: 10px !important;
+}
