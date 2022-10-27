@@ -14,7 +14,7 @@ form.addEventListener("submit", e=>{
     if(prenda.value == "Seleccione una prenda"){
         error = error + "prenda,"
     }
-    if(nombre.value.lenght == ""){
+    if(nombre.value == ""){
         error = error + "nombre,"
     }
     if(talle.value == "Seleccione un talle"){
