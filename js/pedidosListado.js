@@ -9,7 +9,10 @@ function entregar(id){
             });
 }
 
-
-var tabla = document.querySelector("#pedidos");
-
-var dataTable = new DataTable(tabla);
+$(document).ready(function(){
+    $('#pedidos').DataTable({
+        "language":{
+        "url": "https://cdn.datatables.net/plug-ins/1.12.1/i18n/es-ES.json"
+        }
+    });
+});
