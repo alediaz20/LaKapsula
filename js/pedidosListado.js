@@ -21,7 +21,7 @@ function eliminar(id,nombre){
                 type: "POST",
                 data: data
                 }).done(function(){
-                    location.href = 'http://lakapsula.local/index.php?pagina=pedidos'
+                    location.href = 'http://lakapsula.online/index.php?pagina=pedidos'
                 });
         } 
     });
@@ -40,7 +40,7 @@ function entregar(id,nombre,nombreprenda){
                 type: "POST",
                 data: data
                 }).done(function(){
-                    location.href = 'http://lakapsula.local/index.php?pagina=pedidos'
+                    location.href = 'http://lakapsula.online/index.php?pagina=pedidos'
                 });
         } 
     });
