@@ -18,7 +18,7 @@ function Login(){
                 timer: 2500,
             });
         }else{
-            window.location.href = 'http://lakapsula.online/index.php?pagina=listado';
+            window.location.href = 'http://www.lakapsula.online/index.php?pagina=listado';
         }
 });
 }
