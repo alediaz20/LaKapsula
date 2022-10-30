@@ -46,6 +46,25 @@ function entregar(id,nombre,nombreprenda){
     });
 }
 
+function entregar_a_klt(id,nombreprenda){
+    data = {"id":id}
+    Swal.fire({
+        title: 'Entregar '+nombreprenda+'?',
+        showCancelButton: true,
+        confirmButtonText: 'Entregar',
+    }).then((result) => {
+        if (result.isConfirmed) {
+            $.ajax({
+                url: "../../ajax/entregarAKlt.php",
+                type: "POST",
+                data: data
+                }).done(function(){
+                    location.href = 'http://www.lakapsula.online/index.php?pagina=pedidos'
+                });
+        } 
+    });
+}
+
 $(document).ready(function(){
     $('#pedidos').DataTable({
         responsive: true,

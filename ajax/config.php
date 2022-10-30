@@ -26,7 +26,7 @@ const PAGINAS_LUCAS = [
             "icon"=>"fas fa-sign-out-alt"]
 ];
 
-const PERMITIDO_CARO = ["prendas","telas","listado","nuevoPedido","pedidos","editarTela","editarPrenda","calcvinil","editarVinilo","login","salir","agregarDinero"];
+const PERMITIDO_CARO = ["prendas","telas","listado","nuevoPedido","pedidos","editarTela","editarPrenda","calcvinil","editarVinilo","login","salir","agregarDinero","pedidosConfeccion"];
 const PAGINAS_CARO = [
     "listado"=>["nombre"=>"Listado de prendas",
                 "icon"=>"fas fa-ellipsis-v"],
@@ -39,6 +39,8 @@ const PAGINAS_CARO = [
     "nuevoPedido"=>["nombre"=>"Nuevo Pedido",
                     "icon"=>"fas fa-cart-plus"],
     "pedidos"=>["nombre"=>"Ver Pedidos",
+                "icon"=>"fas fa-eye"],
+    "pedidosConfeccion"=>["nombre"=>"Ver Pedidos confeccion",
                 "icon"=>"fas fa-eye"],
     "salir"=>["nombre"=>"Salir",
             "icon"=>"fas fa-sign-out-alt"],
