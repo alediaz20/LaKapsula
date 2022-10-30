@@ -4,11 +4,12 @@
 <div class="px-4">
     <div class="card card-primary">
         <div class="card-header">
-            <h3 class="card-title">Pedidos</h3>
+            <h3 class="card-title">Pedidos a confeccionar</h3>
         </div>
         <div class="card-body">
 <table class="table table-borderless table-hover table-responsive" id="pedidos">
-<?php if(isset($pedidos)){ ?>
+<?php 
+if(isset($pedidos)){ ?>
 <thead>
         <tr>
             <th>Nro Pedido</th>
@@ -38,7 +39,7 @@
                         echo date_format($entregado_a_klt,"d/m/Y"); 
                     }
                 ?></td>
-                        <?php if($value->fecha_entrega == null){ ?>
+                        <?php if($value->entregado_a_klt == null){ ?>
                         <td>
                         <button class="btn btn-kuality" onclick="entregar_a_klt('<?php echo $value->id?>','<?php echo $value->prenda?>')">Entregar</button>
                         </td>
