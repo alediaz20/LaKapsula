@@ -1,5 +1,4 @@
 function entregar(id){
-    var id = document.getElementById
     $.ajax({
             url: "../../ajax/entregarPrenda.php",
             type: "POST",
@@ -7,6 +6,44 @@ function entregar(id){
             }).done({
                 // location.reload()
             });
+}
+
+function eliminar(id,nombre){
+    data = {"id":id}
+    Swal.fire({
+        title: 'Eliminar pedido de '+nombre+'?',
+        showCancelButton: true,
+        confirmButtonText: 'Eliminar',
+    }).then((result) => {
+        if (result.isConfirmed) {
+            $.ajax({
+                url: "../../ajax/eliminarPedido.php",
+                type: "POST",
+                data: data
+                }).done(function(){
+                    location.href = 'http://lakapsula.local/index.php?pagina=pedidos'
+                });
+        } 
+    });
+}
+
+function entregar(id,nombre,nombreprenda){
+    data = {"id":id}
+    Swal.fire({
+        title: 'Entregar '+nombreprenda+' a '+nombre+'?',
+        showCancelButton: true,
+        confirmButtonText: 'Entregar',
+    }).then((result) => {
+        if (result.isConfirmed) {
+            $.ajax({
+                url: "../../ajax/entregarPrenda.php",
+                type: "POST",
+                data: data
+                }).done(function(){
+                    location.href = 'http://lakapsula.local/index.php?pagina=pedidos'
+                });
+        } 
+    });
 }
 
 $(document).ready(function(){

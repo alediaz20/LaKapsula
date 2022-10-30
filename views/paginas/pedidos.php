@@ -85,19 +85,13 @@
                 ?></td>
                         <?php if($value->fecha_entrega == "0000-00-00 00:00:00"){ ?>
                         <td>
-                        <form method="post" name="entregarPrenda" action="ajax/entregarPrenda.php">
-                            <input type="text" name="id" value="<?php echo $value->id ?>"hidden>
-                            <input type="submit" class="btn btn-primary" value="Entregar"></input>                                        
-                        </form>
+                        <button class="btn btn-kuality" onclick="entregar('<?php echo $value->id?>','<?php echo $value->nombre_apellido?>','<?php echo $value->prenda?>')">Entregar</button>
                         </td>
                         <?php } else { ?>
                             <td><button class="btn btn-success">ENTREGADO</button></td> 
                     <?php } ?>
                     <td>
-                        <form method="post" name="eliminarPedido" action="ajax/eliminarPedido.php">
-                            <input type="text" name="id" value="<?php echo $value->id ?>"hidden>
-                            <input type="submit" class="btn btn-danger" value="Eliminar"></input>                                        
-                        </form>
+                        <button class="btn btn-danger" onclick="eliminar('<?php echo $value->id?>','<?php echo $value->nombre_apellido?>')">Eliminar</button>
                     </td>
                     <td>
                         <input type="text" name="id" value="<?php echo $value->id ?>"hidden>

@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Jost:wght@400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Jost:wght@300&display=swap" rel="stylesheet">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Theme style -->
@@ -27,7 +28,7 @@
                     <img src="../imgs/cavila.png" alt="" height="60rem" width="100rem">
                 </div>
                 <div class="card-body">
-                    <form method="post" name="login" id="login" action="ajax/login.php">
+                    <form name="login" id="login">
                         <div class="input-group mb-3">
                             <input type="text" class="form-control" placeholder="User" name="user" id="user">
                             <div class="input-group-append">
@@ -45,11 +46,10 @@
                             </div>
                         </div>
                         <div>
-                            <div class="text-center">
-                                <input type="submit" class="btn btn-kuality" value="Ingresar"></input>
-                            </div>
-                        </div>
                     </form>
+                </div>
+                <div class="text-center">
+                    <button class="btn btn-kuality" onclick="Login()">Ingresar</button>
                 </div>
             </div>
         </div>
