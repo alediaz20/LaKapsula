@@ -18,6 +18,16 @@
   gap: 20px;
 }
 
+.container-pedidos{
+  display: grid;
+
+  grid-template-columns: 1.3fr 3fr;
+
+  grid-auto-rows: auto;
+
+  gap: 20px;
+}
+
 @media (max-width: 922px) {
   .container-telas {
     display: grid;

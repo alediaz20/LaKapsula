@@ -11,7 +11,6 @@ function calcular() {
         showConfirmButton: false,
         timer: 2500,
     });
-
     } else {
         $.ajax({
             url: "../ajax/calcularVinilo.php",
@@ -21,8 +20,31 @@ function calcular() {
             document.getElementById("resultado").style = "display: block";
             $("#resultado").html(res);
         });
-
     }
-
 }
 
+function guardarVinilo(){
+    var id = document.getElementById("id").value
+    var nombre = document.getElementById("nombre").value
+    var precio = document.getElementById("precio").value
+    data = {
+        id:id,
+        nombre:nombre,
+        precio:precio
+    }
+    $.ajax({
+        url: "../ajax/editVinilo.php",
+        type: "POST",
+        data: data
+    }).done(function () {
+        swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Cambios guardados",
+            showConfirmButton: false,
+            timer: 2500,
+        });
+        window.location.reload();
+    });
+
+}
