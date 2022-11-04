@@ -1,7 +1,7 @@
 function verPedidos(nombre){
     data = {"nombre":nombre}
     $.ajax({
-        url: "../ajax/verPedidosCliente.php",
+        url: "../ajax/Clientes/verPedidosCliente.php",
         type: "POST",
         data: data
     }).done(function (res) {
@@ -11,15 +11,6 @@ function verPedidos(nombre){
     });
 }
 
-function entregar(id){
-    $.ajax({
-            url: "../../ajax/entregarPrenda.php",
-            type: "POST",
-            data: id
-            }).done({
-                // location.reload()
-            });
-}
 
 function eliminar(id,nombre){
     data = {"id":id,
@@ -31,7 +22,7 @@ function eliminar(id,nombre){
     }).then((result) => {
         if (result.isConfirmed) {
             $.ajax({
-                url: "../../ajax/eliminarPedido.php",
+                url: "../../ajax/Pedidos/eliminarPedido.php",
                 type: "POST",
                 data: data
                 }).done(function(){
@@ -51,7 +42,7 @@ function entregar(id,nombre,nombreprenda){
     }).then((result) => {
         if (result.isConfirmed) {
             $.ajax({
-                url: "../../ajax/entregarPrenda.php",
+                url: "../../ajax/Pedidos/entregarPrenda.php",
                 type: "POST",
                 data: data
                 }).done(function(){
@@ -70,7 +61,7 @@ function entregar_a_klt(id,nombreprenda){
     }).then((result) => {
         if (result.isConfirmed) {
             $.ajax({
-                url: "../../ajax/entregarAKlt.php",
+                url: "../../ajax/Pedidos/entregarAKlt.php",
                 type: "POST",
                 data: data
                 }).done(function(){

@@ -3,7 +3,7 @@
 function verPedidos(nombre){
     data = {"nombre":nombre}
     $.ajax({
-        url: "../ajax/verPedidosCliente.php",
+        url: "../ajax/Clientes/verPedidosCliente.php",
         type: "POST",
         data: data
     }).done(function (res) {

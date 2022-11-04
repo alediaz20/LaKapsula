@@ -1,40 +1,39 @@
-function actualizarPrecio(precio,id_prenda){
+function actualizarPrecio(precio, id_prenda) {
     document.getElementById("precio").value = precio;
     document.getElementById("precio_para_descuento").value = precio;
     document.getElementById("id_prenda").value = id_prenda;
     document.getElementById("total_descuento").value = " ";
     document.getElementById("porc_descuento").value = " ";
-
 }
 
-function aplicarDescuento(){
+function aplicarDescuento() {
     var precio = document.getElementById("precio_para_descuento").value;
-    var descuento = document.getElementById("porc_descuento").value
-        desc = precio / 100;
-        desc = desc * descuento;
+    var descuento = document.getElementById("porc_descuento").value;
+    desc = precio / 100;
+    desc = desc * descuento;
     document.getElementById("total_descuento").value = desc;
-        precio = parseInt(precio) - parseInt(desc); 
+    precio = parseInt(precio) - parseInt(desc);
     document.getElementById("precio").value = precio;
 }
 
-const nombre = document.getElementById("nombre");
-const prenda = document.getElementById("prenda");
-const talle = document.getElementById("talle");
-const form = document.getElementById("pedido");
-let error = "";
+function nuevoPedido() {
+    var id_prenda = document.getElementById("id_prenda").value;
+    var nombre = document.getElementById("nombre").value;
+    var prenda = document.getElementById("prenda").value;
+    var talle = document.getElementById("talle").value;
+    var precio = document.getElementById("precio").value;
+    let error = "";
 
-form.addEventListener("submit", e=>{
-    e.preventDefault();
-    if(prenda.value == "Seleccione una prenda"){
-        error = error + "prenda,"
+    if (prenda == "Seleccione una prenda") {
+        error = error + "prenda,";
     }
-    if(nombre.value == ""){
-        error = error + "nombre,"
+    if (nombre == "") {
+        error = error + "nombre,";
     }
-    if(talle.value == "Seleccione un talle"){
-        error = error + "talle"
+    if (talle == "Seleccione un talle") {
+        error = error + "talle";
     }
-    if(error != ""){
+    if (error != "") {
         Swal.fire({
             position: "center",
             icon: "warning",
@@ -43,16 +42,27 @@ form.addEventListener("submit", e=>{
             timer: 2500,
         });
         error = "";
-    }else{
-        Swal.fire({
-            position: "center",
-            icon: "success",
-            title: "Pedido registrado",
-            showConfirmButton: false,
-            timer: 2500,
+    } else {
+        data = {
+            id_prenda: id_prenda,
+            nombre: nombre,
+            prenda: prenda,
+            talle: talle,
+            precio: precio,
+        };
+
+        $.ajax({
+            url: "../ajax/Pedidos/nuevoPedido.php",
+            type: "POST",
+            data: data,
+        }).done(function (res) {
+            Swal.fire({
+                position: "center",
+                icon: "success",
+                title: "Pedido registrado",
+                showConfirmButton: false,
+                timer: 2500,
+            });
         });
-        form.submit();
     }
-});
-
-
+}

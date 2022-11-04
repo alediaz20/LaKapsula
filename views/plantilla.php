@@ -43,7 +43,7 @@
     <div class="nav nav-justified py-2 nav-pills bg-kuality">
       <?php foreach($paginas as $pagina => $pag){ ?>
         <li class="nav-item bg-kuality">
-          <a class="nav-link <?php if(isset($_GET['pagina']) & ($_GET['pagina'] == $pagina)){ echo 'active';} ?>" href="index.php?pagina=<?php echo $pagina ?>">
+          <a class="nav-link <?php if(isset($_GET['pagina']) && ($_GET['pagina'] == $pagina)){ echo 'active';} ?>" href="index.php?pagina=<?php echo $pagina ?>">
             <i class="<?php echo $pag['icon']?>"></i><span> <?php echo $pag['nombre'] ?></span>
           </a>
         </li>
@@ -51,22 +51,22 @@
     </div>
   </div> 
       <?php if (isset($_GET['pagina'])) {
-              if (in_array($_GET['pagina'], $paginas_permitidas)) {
-                include_once("paginas/" . $_GET['pagina'] . ".php");
+              if (in_array($_GET['pagina'], array_keys($paginas_permitidas))) {
+                include_once("paginas/" . $paginas_permitidas[$_GET['pagina']]['dir']);
               } else {
                 include_once("paginas/404.php");
               }
             } else {
-              include_once("paginas/listado.php");
+              include_once("paginas/Prendas/listado.php");
             }
       ?>
   </div>
 
-
+<footer>
 <?php
   include_once("footer.php");
 ?>
-
+</footer>
   <script src="../js/sweetalert2.all.min.js"></script>
 </body>
 </html>
