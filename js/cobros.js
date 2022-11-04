@@ -13,11 +13,11 @@ function agregarCobro(){
     }).then((result) => {
         if (result.isConfirmed) {
             $.ajax({
-                url: "../../ajax/saveCobros.php",
+                url: "../../ajax/Cobros/saveCobros.php",
                 type: "POST",
                 data: data
                 }).done(function(){
-                    location.href = 'http://lakapsula.local/index.php?pagina=cobros'
+                    location.href = 'http://capsula.local/index.php?pagina=cobros'
                 });
         } 
     });

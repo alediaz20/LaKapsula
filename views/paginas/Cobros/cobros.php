@@ -1,5 +1,8 @@
 <?php
-require_once("ajax/getCobros.php");
+require_once("model/class.cobros.php");
+$cCobros = new cCobros();
+
+$cobros = $cCobros->getCobros();
 ?>
 <div class="container-pedidos px-4">
     <div class="card card-primary" >
@@ -79,7 +82,8 @@ require_once("ajax/getCobros.php");
 </div>
 
 
-<script src="../js/cobros.js"></script>
+<script src=".././../../js/cobros.js"></script>
+<script src=".././../../js/sweetalert2.all.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/r/dt/jq-2.1.4,jszip-2.5.0,pdfmake-0.1.18,dt-1.10.9,af-2.0.0,b-1.0.3,b-colvis-1.0.3,b-html5-1.0.3,b-print-1.0.3,se-1.0.1/datatables.min.css"/>

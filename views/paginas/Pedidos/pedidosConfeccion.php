@@ -1,5 +1,7 @@
-<?php require_once("ajax/getPedidos.php"); 
-    require_once("ajax/getMasPedidos.php");
+<?php 
+require_once("model/class.pedidos.php");
+$cPedidos = new cPedidos();
+$pedidos = $cPedidos->getPedidos();
 ?>
 <div class="px-4">
     <div class="card card-primary">
