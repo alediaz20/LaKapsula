@@ -1,6 +1,4 @@
-window.onload = (event) => {
-    document.getElementById("pedidos_cliente_card").style = "display: none";
-}
+
 
 function verPedidos(nombre){
     data = {"nombre":nombre}
@@ -10,18 +8,21 @@ function verPedidos(nombre){
         data: data
     }).done(function (res) {
         document.getElementById("pedidos_cliente_card").style = "display: block";
-        $("#pedidos_cliente_header").html("Pedidos de "+nombre);
+        $("#pedidos_cliente_header").html("Pedidos de "+nombre.toUpperCase());
         $("#pedidos_cliente_body").html(res);
     });
 }
 
+
 $(document).ready(function(){
     $('#clientes').DataTable({
         responsive: true,
-        dom: 'f',
+        dom: 'fltp',
         language:{
             "url": "https://cdn.datatables.net/plug-ins/1.12.1/i18n/es-ES.json"
         },
+        "lengthMenu": [ 20, 40, 80, 100 ],
+        "pageLength": 20,
         order: [[0, 'asc']],
     });
 });

@@ -186,3 +186,10 @@ body {
   padding: 6px !important;
   margin-left: 10px !important;
 }
+
+.single-line {
+  width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}

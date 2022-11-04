@@ -1,6 +1,20 @@
 function actualizarPrecio(precio,id_prenda){
     document.getElementById("precio").value = precio;
+    document.getElementById("precio_para_descuento").value = precio;
     document.getElementById("id_prenda").value = id_prenda;
+    document.getElementById("total_descuento").value = " ";
+    document.getElementById("porc_descuento").value = " ";
+
+}
+
+function aplicarDescuento(){
+    var precio = document.getElementById("precio_para_descuento").value;
+    var descuento = document.getElementById("porc_descuento").value
+        desc = precio / 100;
+        desc = desc * descuento;
+    document.getElementById("total_descuento").value = desc;
+        precio = parseInt(precio) - parseInt(desc); 
+    document.getElementById("precio").value = precio;
 }
 
 const nombre = document.getElementById("nombre");

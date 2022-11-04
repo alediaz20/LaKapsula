@@ -13,6 +13,11 @@ const TBL_TELAS = 'telas';
 const TBL_USERS = 'usuarios';
 const TBL_VINILOS = 'vinilos';
 const TBL_PEDIDOS = 'pedidos';
+const TBL_CLIENTES = 'clientes';
+const TBL_COBROS = 'cobros';
+
+
+
 const PERMITIDO_LUCAS = ["listado","nuevoPedido","pedidos","login","salir","agregarDinero","clientes"];
 const PAGINAS_LUCAS = [
     "listado"=>["nombre"=>"Listado de prendas",
@@ -26,8 +31,7 @@ const PAGINAS_LUCAS = [
     "salir"=>["nombre"=>"Salir",
             "icon"=>"fas fa-sign-out-alt"]
 ];
-
-const PERMITIDO_CARO = ["prendas","telas","listado","nuevoPedido","pedidos","editarTela","editarPrenda","calcvinil","editarVinilo","login","salir","agregarDinero","pedidosConfeccion","clientes"];
+const PERMITIDO_CARO = ["prendas","telas","listado","nuevoPedido","pedidos","editarTela","editarPrenda","calcvinil","editarVinilo","login","salir","agregarDinero","pedidosConfeccion","clientes","cobros"];
 const PAGINAS_CARO = [
     "listado"=>["nombre"=>"Listado de prendas",
                 "icon"=>"fas fa-ellipsis-v"],
@@ -45,11 +49,14 @@ const PAGINAS_CARO = [
                 "icon"=>"fas fa-eye"],
     "clientes"=>["nombre"=>"Clientes",
                 "icon"=>"fas fa-users"],
+    "cobros"=>["nombre"=>"Cobros",
+                "icon"=>"fas fa-dollar"],
     "salir"=>["nombre"=>"Salir",
             "icon"=>"fas fa-sign-out-alt"],
 ];
 
-const TALLES = ["4","8","12","16","S","M","L","XL","XXL"];
+
+const TALLES = ["4","8","10","12","16","S","M","L","XL","XXL","MEDIAS"];
 
 const URL_ajax = "http://capsula.local/ajax";
 const URL_local = "http://capsula.local/";

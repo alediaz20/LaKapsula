@@ -1,12 +1,14 @@
 <?php
 require_once("ajax/getClientes.php");
 $clientes_pedidos = [];
+
+if(isset($clientes)){
 foreach($clientes as $key => $value){
     $data = (array)$value;
     $clientes_pedidos[$value->nombre_apellido][$value->id] = $data;
 }
-
 ?>
+
 <div class="container-pedidos px-4">
     <div class="card card-primary" >
         <div class="card-header">
@@ -25,7 +27,7 @@ foreach($clientes as $key => $value){
                     <?php 
                     foreach ($clientes_pedidos as $key => $value) { ?>
                         <tr>
-                            <td><?php echo $key; ?></td>
+                            <td><?php echo strtoupper($key); ?></td>
                             <td>
                                 <button class="btn btn-warning" onclick="verPedidos('<?php echo $key ?>')"><i class="fas fa-eye"></i></button>
                             </td>
@@ -43,6 +45,10 @@ foreach($clientes as $key => $value){
             <div class="card-body" id="pedidos_cliente_body"></div>
     </div>
 </div>
+<?php }else{ ?>
+NO HAY CLIENTES PARA MOSTRAR
+<?php } ?>
+
 <script src="../js/pedidosCliente.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>

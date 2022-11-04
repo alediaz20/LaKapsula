@@ -15,22 +15,41 @@
                     <option>Seleccione una prenda</option>
                         <?php
                         foreach($costo as $key => $value){
-                            $costoTotal = $value['precio'] + COSTO_VINILO + COSTO_CONFECCION;
-                            $value['precio'] = ceil($costoTotal * 1.4);
+                                $costoTotal = $value['precio'] + COSTO_VINILO + COSTO_CONFECCION;
+                                $value['precio'] = ceil($costoTotal * 1.4);
+                                $value['precio'] = round($value['precio'] / 1000, 1);
+                                $value['precio'] = $value['precio'] * 1000;
+                                if($key == "Medias K"){
+                                    $value['precio'] = 1700;
+                                }
                             ?>
                             <option id="<?php echo $value['id']?>" precio="<?php echo $value['precio'] ?>", id_prenda="<?php echo $value['id']?>"><?php echo $key?></option>
                         <?php } ?>
                     </select>
                 </div>
-                <input type="text" name="id_prenda" id="id_prenda" hidden>
-                <div class="form-group">
-                    <label for="precio">Precio</label>
+                <label for="precio">Precio</label>
                     <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="btn btn-info btn-flat"><i class="fas fa-dollar-sign"></i></span>
+                        <div class="input-group-prepend">
+                            <span class="btn btn-info btn-flat"><i class="fas fa-dollar-sign"></i></span>
+                        </div>
+                        <input type="text" class="form-control form-control-border border-width-2" id="precio" name="precio" placeholder="precio" value="seleccione una opción" readonly>
                     </div>
-                    <input type="text" class="form-control form-control-border border-width-2" id="precio" name="precio" placeholder="precio" value="seleccione una opción" readonly>
-                </div>
+                <input type="text" name="id_prenda" id="id_prenda" hidden>
+                <input type="text" name="precio_para_descuento" id="precio_para_descuento" hidden>
+                <div class="d-flex justify-content-arround">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="btn btn-info btn-flat"><i class="fas fa-percent"></i></span>
+                        </div>
+                        <input type="text" class="form-control form-control-border border-width-2" id="porc_descuento" name="porc_descuento" onchange="aplicarDescuento()" placeholder="Descuento">
+                    </div>
+                    
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="btn btn-info btn-flat"><i class="fas fa-dollar-sign"></i></span>
+                        </div>
+                        <input type="text" class="form-control form-control-border border-width-2" id="total_descuento" name="total_descuento" readonly placeholder="Total descuento">
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="nombre">Nombre y apellido</label>
@@ -40,19 +59,11 @@
                     <label for="talle">Talle</label>
                     <select name="talle" id="talle">
                         <option>Seleccione un talle</option>
-                        <?php foreach(TALLES as $key => $value){ ?>
-                            <option><?php echo $value ?></option>
-                        <?php } ?>
+                        <?php 
+                            foreach(TALLES as $key => $value){ ?>
+                                <option><?php echo $value ?></option>
+                            <?php } ?>
                     </select>                    
-                </div>
-                <div class="form-group">
-                    <label for="entrega">Entrega</label>
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="btn btn-info btn-flat"><i class="fas fa-dollar-sign"></i></span>
-                        </div>
-                        <input type="text" class="form-control form-control-border border-width-2" name="entrega" placeholder="Entrega" value="0">
-                    </div>
                 </div>
             </div>
             <div class="card-footer">

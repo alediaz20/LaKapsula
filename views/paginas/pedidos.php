@@ -46,13 +46,10 @@
             <th>Talle</th>
             <th>Nombre</th>
             <th>Precio</th>
-            <th>Entrega</th>
-            <th>Resto</th>
             <th>Fecha Pedido</th>
             <th>Entregado a cliente</th>
             <th>Marcar como entregado</th>
             <th>Eliminar</th>
-            <th>Agregar dinero</th>
         </tr>
     </thead>
     <tbody>
@@ -63,16 +60,7 @@
                 <td><?php echo $value->prenda; ?></td>
                 <td><?php echo $value->talle; ?></td>
                 <td><?php echo $value->nombre_apellido; ?></td>
-                <td>$<?php echo $value->precio; ?></td>
-                <td>$<?php echo $value->entrega; ?></td>
-                <?php 
-                    if($value->resto <= 0){ ?>
-                <td class="bg-success">PAGADO</td> 
-                    <?php }else{ ?>
-                        <td>$<?php echo $value->resto;?> </td>
-                    <?php } ?>
-                </td>
-                    
+                <td><?php echo "$".$value->precio; ?></td>
                 <td><?php $fecha = date_create($value->fecha_pedido); 
                             echo date_format($fecha,"d/m/Y"); ?></td>
                 <td><?php
@@ -81,22 +69,18 @@
                     <?php }else{
                         $fecha_entrega = date_create($value->fecha_entrega); 
                         echo date_format($fecha_entrega,"d/m/Y"); 
-                    }
-                ?></td>
-                        <?php if($value->fecha_entrega == "0000-00-00 00:00:00"){ ?>
-                        <td>
-                        <button class="btn btn-kuality" onclick="entregar('<?php echo $value->id?>','<?php echo $value->nombre_apellido?>','<?php echo $value->prenda?>')">Entregar</button>
-                        </td>
-                        <?php } else { ?>
-                            <td><button class="btn btn-success">ENTREGADO</button></td> 
+                    } ?>
+                </td>
+                    <?php if($value->fecha_entrega == "0000-00-00 00:00:00"){ ?>
+                <td>
+                    <button class="btn btn-kuality" onclick="entregar('<?php echo $value->id?>','<?php echo $value->nombre_apellido?>','<?php echo $value->prenda?>')">Entregar</button>
+                </td>
+                    <?php } else { ?>
+                <td><button class="btn btn-success">ENTREGADO</button></td> 
                     <?php } ?>
-                    <td>
-                        <button class="btn btn-danger" onclick="eliminar('<?php echo $value->id?>','<?php echo $value->nombre_apellido?>')">Eliminar</button>
-                    </td>
-                    <td>
-                        <input type="text" name="id" value="<?php echo $value->id ?>"hidden>
-                        <a href="index.php?pagina=agregarDinero&id=<?php echo $value->id ?>" class="btn btn-primary">Agregar dinero</a>
-                    </td>
+                <td>
+                    <button class="btn btn-danger" onclick="eliminar('<?php echo $value->id?>','<?php echo $value->nombre_apellido?>')">Eliminar</button>
+                </td>
             </tr>
         <?php }}else{?>
             NO HAY PEDIDOS PARA MOSTRAR

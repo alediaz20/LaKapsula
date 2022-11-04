@@ -2,18 +2,30 @@
 
 require_once("connect.php");
 $tabla = TBL_PEDIDOS;
+$tablaClientes = TBL_CLIENTES;
 
 $sql = "SELECT * FROM `$tabla` WHERE nombre_apellido ='" . $_POST['nombre'] . "'";
 
 $result = $mysqli->query($sql);
 
-if ($result) {
+if ($result->num_rows >= 1) {
     while ($row = $result->fetch_object()) {
         $cliente_pedidos[] = $row;
     }
     $result->close();
 }
-?>
+
+$clientes = "SELECT * FROM $tablaClientes";
+$resultClientes = $mysqli->query($clientes);
+if($resultClientes->num_rows >= 1){
+    while($row = $resultClientes->fetch_object()){
+        $clientesData[] = $row;
+    }
+}
+
+if(!isset($cliente_pedidos)){ ?>
+    <h4>No hay pedidos para mostrar</h4>
+<?php }else{ ?>
 
 <table class="table table-borderless table-hover table-responsive">
         <thead>
@@ -23,13 +35,10 @@ if ($result) {
                 <th>Talle</th>
                 <th>Nombre</th>
                 <th>Precio</th>
-                <th>Entrega</th>
-                <th>Resto</th>
                 <th>Fecha Pedido</th>
                 <th>Entregado a cliente</th>
                 <th>Marcar como entregado</th>
                 <th>Eliminar</th>
-                <th>Agregar dinero</th>
             </tr>
         </thead>
         <tbody>
@@ -43,15 +52,7 @@ if ($result) {
                     <td><?php echo $value->prenda; ?></td>
                     <td><?php echo $value->talle; ?></td>
                     <td><?php echo $value->nombre_apellido; ?></td>
-                    <td>$<?php echo $value->precio; ?></td>
-                    <td>$<?php echo $value->entrega; ?></td>
-                    <?php
-                    if ($value->resto <= 0) { ?>
-                        <td class="bg-success">PAGADO</td>
-                    <?php } else { ?>
-                        <td>$<?php echo $value->resto; ?> </td>
-                    <?php } ?>
-                    </td>
+                    <td>$<?php echo $value->precio; ?></td>                
                     <td><?php $fecha = date_create($value->fecha_pedido);
                         echo date_format($fecha, "d/m/Y"); ?></td>
                     <td><?php
@@ -72,27 +73,42 @@ if ($result) {
                     <td>
                         <button class="btn btn-danger" onclick="eliminar('<?php echo $value->id ?>','<?php echo $value->nombre_apellido ?>')">Eliminar</button>
                     </td>
-                    <td>
-                        <input type="text" name="id" value="<?php echo $value->id ?>" hidden>
-                        <a href="index.php?pagina=agregarDinero&id=<?php echo $value->id ?>" class="btn btn-primary">Agregar dinero</a>
-                    </td>
                 </tr>
             <?php 
-            $precio_total += $value->precio;
-            $entrega_total += $value->entrega;
-            $resto_total += $value->resto;
+            $monto_debe = 0;
+            $monto_entrega = 0;
+            foreach($clientesData as $key => $value){
+                if($value->nombre_apellido == $_POST['nombre']){ 
+                    $monto_debe += $value->monto_debe;
+                    $monto_entrega += $value->monto_entrega;
+                    $idCliente = $value->id;
+                }
+            }
         } ?>
             <tr>
                 <td><b>PRECIO TOTAL:</b></td>
-                <td>$<?php echo $precio_total ?></td>
+                <td>$<?php echo $monto_debe ?></td>
                 <td><b>ENTREGA TOTAL:</b></td>
-                <td>$<?php echo $entrega_total ?></td>
+                <td>$<?php echo $monto_entrega ?></td>
                 <td><b>RESTO TOTAL:</b></td>
-                <td>$<?php echo $resto_total ?></td>
+                <td>
+                    
+                <?php if(($monto_debe - $monto_entrega) == 0){ ?>
+                    <button class="btn btn-success">PAGADO</button>
+                <?php }else{ 
+                    echo "$".($monto_debe - $monto_entrega);
+                } ?>
+                </td>
+                <td>
+                <?php if(($monto_debe - $monto_entrega) != 0){ ?>
+                    <a href="index.php?pagina=agregarDinero&id=<?php echo $idCliente ?>" class="btn btn-primary">Agregar dinero</a>
+                <?php } ?>
+                </td>
             </tr>
         </tbody>
 </table>
 
+<?php } ?>
 <style type="text/css">
 .datatable_wraper{
     float:left !important;

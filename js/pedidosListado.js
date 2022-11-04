@@ -1,3 +1,16 @@
+function verPedidos(nombre){
+    data = {"nombre":nombre}
+    $.ajax({
+        url: "../ajax/verPedidosCliente.php",
+        type: "POST",
+        data: data
+    }).done(function (res) {
+        document.getElementById("pedidos_cliente_card").style = "display: block";
+        $("#pedidos_cliente_header").html("Pedidos de "+nombre.toUpperCase());
+        $("#pedidos_cliente_body").html(res);
+    });
+}
+
 function entregar(id){
     $.ajax({
             url: "../../ajax/entregarPrenda.php",
@@ -9,7 +22,8 @@ function entregar(id){
 }
 
 function eliminar(id,nombre){
-    data = {"id":id}
+    data = {"id":id,
+            "nombre":nombre}
     Swal.fire({
         title: 'Eliminar pedido de '+nombre+'?',
         showCancelButton: true,
@@ -21,7 +35,8 @@ function eliminar(id,nombre){
                 type: "POST",
                 data: data
                 }).done(function(){
-                    location.href = 'http://www.lakapsula.online/index.php?pagina=pedidos'
+                    verPedidos(nombre);
+                    // location.href = 'http://lakapsula.online/index.php?pagina=clientes&nombre='+nombre;
                 });
         } 
     });
@@ -85,6 +100,8 @@ $(document).ready(function(){
         language:{
             "url": "https://cdn.datatables.net/plug-ins/1.12.1/i18n/es-ES.json"
         },
+        "lengthMenu": [ 25, 50, 75, 100 ],
+        "pageLength": 50,
         order: [[0, 'desc']]
     });
 });
