@@ -27,7 +27,7 @@ function eliminar(id,nombre){
                 data: data
                 }).done(function(){
                     verPedidos(nombre);
-                    // location.href = 'http://lakapsula.online/index.php?pagina=clientes&nombre='+nombre;
+                    // location.href = 'http://capsula.local/index.php?pagina=clientes&nombre='+nombre;
                 });
         } 
     });
@@ -46,7 +46,7 @@ function entregar(id,nombre,nombreprenda){
                 type: "POST",
                 data: data
                 }).done(function(){
-                    location.href = 'http://www.lakapsula.online/index.php?pagina=pedidos'
+                    location.href = 'http://www.capsula.local/index.php?pagina=pedidos'
                 });
         } 
     });
@@ -65,7 +65,7 @@ function entregar_a_klt(id,nombreprenda){
                 type: "POST",
                 data: data
                 }).done(function(){
-                    location.href = 'http://www.lakapsula.online/index.php?pagina=pedidosConfeccion'
+                    location.href = 'http://www.capsula.local/index.php?pagina=pedidosConfeccion'
                 });
         } 
     });

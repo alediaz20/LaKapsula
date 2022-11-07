@@ -1,26 +1,22 @@
 <?php
-require_once("ajax/obtenerClientesRegistrados.php");
+require_once(DIR_MODEL."class.clientes.php");
 $id = $_GET['id'];
-
-foreach ($clientesRegistrados as $key => $value){
-    if($value->id == $id){
-        $ClientesRegistrados = $value;
-    }
-}
+$cClientes = new CClientes();
+$cliente = $cClientes->getclienteById($id);
 ?>
 <div class="px-4">
     <div class="card card-primary">
-        <div class="card-header"><h3 class="card-title">Agregar dinero  a <?= $ClientesRegistrados->nombre_apellido ?></h3></div> 
+        <div class="card-header"><h3 class="card-title">Agregar dinero  a <?= $cliente->nombre_apellido ?></h3></div> 
         <div class="card-body">
                 <form method="post" name="agregarDinero" action="ajax/agregarDinero.php">
-                <input type="text" class="form-control form-control-border border-width-2" id="id" value="<?php echo $ClientesRegistrados->id?>" hidden>
+                <input type="text" class="form-control form-control-border border-width-2" id="id" value="<?php echo $cliente->id?>" hidden>
                 <div class="form-group">
                     <label for="precio">Total pedido</label>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="btn btn-info btn-flat"><i class="fas fa-dollar-sign"></i></span>
                         </div>
-                        <input type="text" class="form-control form-control-border border-width-2" id="precio" value="<?php echo $ClientesRegistrados->monto_debe?>" readonly>
+                        <input type="text" class="form-control form-control-border border-width-2" id="precio" value="<?php echo $cliente->monto_debe?>" readonly>
                     </div>
                 </div>
                 <div class="form-group">
@@ -29,7 +25,7 @@ foreach ($clientesRegistrados as $key => $value){
                         <div class="input-group-prepend">
                             <span class="btn btn-info btn-flat"><i class="fas fa-dollar-sign"></i></span>
                         </div>
-                        <input type="text" class="form-control form-control-border border-width-2" id="entrega_anterior" value="<?php echo $ClientesRegistrados->monto_entrega?>" readonly>
+                        <input type="text" class="form-control form-control-border border-width-2" id="entrega_anterior" value="<?php echo $cliente->monto_entrega?>" readonly>
                     </div>
                 </div>
                 <div class="form-group">
@@ -38,7 +34,7 @@ foreach ($clientesRegistrados as $key => $value){
                         <div class="input-group-prepend">
                             <span class="btn btn-info btn-flat"><i class="fas fa-dollar-sign"></i></span>
                         </div>
-                        <input type="text" class="form-control form-control-border border-width-2" id="resto" value="<?php echo ($ClientesRegistrados->monto_debe - $ClientesRegistrados->monto_entrega)?>" readonly>
+                        <input type="text" class="form-control form-control-border border-width-2" id="resto" value="<?php echo ($cliente->monto_debe - $cliente->monto_entrega)?>" readonly>
                     </div>
                 </div>
                 <label for="nueva_entrega">Nueva entrega</label>
@@ -58,6 +54,6 @@ foreach ($clientesRegistrados as $key => $value){
     </div>
 </div>
 
-<script src="../../js/agregarDinero.js"></script>
+<script src="../../js/pedidosCliente.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 

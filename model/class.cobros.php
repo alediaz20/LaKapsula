@@ -41,4 +41,6 @@ class cCobros extends cKapsula
         $result = $this->mysqli->query($insert);
         return $result;
     }
+
+
 }

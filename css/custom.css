@@ -193,3 +193,8 @@ body {
   white-space: nowrap;
   overflow: hidden;
 }
+
+.select2-selection__choice{
+  background-color:rgb(3, 130, 134) !important;
+  color:white !important;
+}

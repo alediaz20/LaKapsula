@@ -38,6 +38,19 @@ class cClientes extends cKapsula
         return $cliente;
     }
 
+    public function getClienteById($id)
+    {
+        $sql = "SELECT * FROM `" . $this->mainTable . "` WHERE id = '" . $id . "'";
+        $result = $this->mysqli->query($sql);
+        if ($result) {
+            while ($row = $result->fetch_object()) {
+                $cliente[] = $row;
+            }
+            $result->close();
+        }
+        return $cliente[0];
+    }
+
     public function createCliente($nombre, $monto)
     {
         $sql = "INSERT INTO `" . $this->mainTable . "` (nombre_apellido, monto_debe, monto_entrega) VALUES ('" . $nombre . "','" . $monto . "','0')";
@@ -56,5 +69,20 @@ class cClientes extends cKapsula
         $cPedidos = new cPedidos();
         $pedidos = $cPedidos->getPedidosByCliente($nombre);
         return $pedidos;
+    }
+
+
+    public function agregarDinero($data)
+    {
+        $nueva_entrega = $data['nueva_entrega'];
+        $entrega_anterior = $data['entrega_anterior'];
+
+        $entrega_final = $nueva_entrega + $entrega_anterior;
+
+        $sql = "UPDATE `" . $this->mainTable . "` SET `monto_entrega`=" . $entrega_final . " WHERE id = " . $data['id'];
+
+        $result = $this->mysqli->query($sql);
+
+        return $result;
     }
 }

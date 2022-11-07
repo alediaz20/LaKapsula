@@ -1,8 +1,12 @@
-<?php require_once(DIR_MODEL."class.prendas.php"); 
+<?php 
+require_once(DIR_MODEL."class.prendas.php"); 
+require_once(DIR_MODEL."class.telas.php"); 
     $cPrendas = new cPrendas();
     $prendas = $cPrendas->getPrendas();
-?>
+    $cTelas = new cTelas();
+    $telas = $cTelas->getTelas();
 
+?>
 <div class="container-telas px-4">
     <div class="card card-primary">
         <div class="card-header">
@@ -15,9 +19,15 @@
                     <input type="text" class="form-control form-control-border border-width-2" id="prenda_nombre" placeholder="Nombre prenda">
                 </div>
                 <div class="form-group">
-                    <label for="prenda_telas">Telas</label>
-                    <input type="text" class="form-control form-control-border border-width-2" id="prenda_telas" placeholder="Telas (Separado por comas)">
-                </div>
+                    <label for="telas">Telas</label>
+                        <select id="telas" name ="telas" multiple="multiple" class="form-control form-control-border border-width-2">
+                        <?php foreach ($telas as $key => $value){ ?>
+                            <option value="<?php echo $value->nombre ?>"> <?php echo $value->nombre ?></option>
+                            <?php } ?>
+                        </select>
+                    </div>
+
+
                 <div class="form-group">
                     <label for="metros_por_tela">Metros por tela</label>
                     <input type="text" class="form-control form-control-border border-width-2" id="metros_por_tela" placeholder="Metros por tela (Separado por comas)">
@@ -61,4 +71,7 @@
     </div>
 </div>
 
-<script src="../../../js/prendas.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<script src="../js/prendas.js"></script>
