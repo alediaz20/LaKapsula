@@ -20,53 +20,38 @@
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 
   <!-- datatable -->
-  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.12.1/af-2.4.0/b-2.2.3/b-html5-2.2.3/date-1.1.2/r-2.3.0/datatables.min.css"/>
- 
- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
- <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.12.1/af-2.4.0/b-2.2.3/b-html5-2.2.3/date-1.1.2/r-2.3.0/datatables.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.12.1/af-2.4.0/b-2.2.3/b-html5-2.2.3/date-1.1.2/r-2.3.0/datatables.min.css" />
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.12.1/af-2.4.0/b-2.2.3/b-html5-2.2.3/date-1.1.2/r-2.3.0/datatables.min.js"></script>
+  <script src="../js/sweetalert2.all.min.js"></script>
 
 </head>
 
 <body style="font-family: 'Jost', sans-serif;">
-
-  <?php  if ($_SESSION['user'] == 'cavila') {
-            $paginas = PAGINAS_CARO;
-            $paginas_permitidas = PERMITIDO_CARO;
-          } else {
-            $paginas = PAGINAS_LUCAS;
-            $paginas_permitidas = PERMITIDO_LUCAS;
-          }
-  ?>
-
   <div class="container-fluid mb-5">
-    <div class="nav nav-justified py-2 nav-pills bg-kuality">
-      <?php foreach($paginas as $pagina => $pag){ ?>
-        <li class="nav-item bg-kuality">
-          <a class="nav-link <?php if(isset($_GET['pagina']) && ($_GET['pagina'] == $pagina)){ echo 'active';} ?>" href="index.php?pagina=<?php echo $pagina ?>">
-            <i class="<?php echo $pag['icon']?>"></i><span> <?php echo $pag['nombre'] ?></span>
-          </a>
-        </li>
-      <?php } ?>
-    </div>
-  </div> 
-      <?php if (isset($_GET['pagina'])) {
-              if (in_array($_GET['pagina'], array_keys($paginas_permitidas))) {
-                include_once("paginas/" . $paginas_permitidas[$_GET['pagina']]['dir']);
-              } else {
-                include_once("paginas/404.php");
-              }
-            } else {
-              include_once("paginas/Prendas/listado.php");
-            }
-      ?>
+    <?php include_once("mainmenu.php") ?>
+  </div>
+  <?php if (isset($_GET['pagina'])) {
+    if (in_array($_GET['pagina'], array_keys($paginas_permitidas))) {
+      include_once("paginas/" . $paginas_permitidas[$_GET['pagina']]['dir']);
+    } else {
+      include_once("paginas/404.php");
+    }
+  } else {
+    include_once("paginas/Prendas/listado.php");
+  }
+  ?>
   </div>
 
-<footer>
-<?php
-  include_once("footer.php");
-?>
-</footer>
-  <script src="../js/sweetalert2.all.min.js"></script>
+  <footer>
+    <?php
+    include_once("footer.php");
+    ?>
+  </footer>
+
+
 </body>
+
 </html>
