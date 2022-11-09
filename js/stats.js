@@ -6,6 +6,18 @@ $(document).ready(function(){
             datasets: [dataPrendas],
         },
         options: {
+            backgroundColor: [
+                'rgba(0, 99, 132, 0.6)',
+                'rgba(30, 99, 132, 0.6)',
+                'rgba(60, 99, 132, 0.6)',
+                'rgba(90, 99, 132, 0.6)',
+                'rgba(120, 99, 132, 0.6)',
+                'rgba(150, 99, 132, 0.6)',
+                'rgba(180, 99, 132, 0.6)',
+                'rgba(210, 99, 132, 0.6)',
+                'rgba(240, 99, 132, 0.6)',
+                'rgba(240, 99, 132, 0.6)'
+            ],
             borderRadius:20,
         },
     });
@@ -18,6 +30,8 @@ $(document).ready(function(){
         },
         options: {
             borderRadius:20,
+            backgroundColor:
+            'rgba(210, 99, 132, 0.6)',
         },
     });
 });

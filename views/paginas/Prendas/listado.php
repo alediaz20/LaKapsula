@@ -22,7 +22,7 @@
             <!-- body -->
             <div class="card-body text-center">
                 <?php if($value->nombre == "Medias K"){ ?>
-                <img class="" src="imgs/prendas/<?php echo $value->id.".png" ?>"" alt="portada" width="250rem" height="300rem">
+                <img class="" src="imgs/prendas/<?php echo $value->id.".png" ?>" alt="portada" width="250rem" height="300rem">
                 <div class="info-box">
                     <span class="info-box-icon bg-kuality"><i class="fas fa-dollar-sign"></i></span>
                     <div class="info-box-content">

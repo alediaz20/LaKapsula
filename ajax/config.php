@@ -41,6 +41,7 @@ const PAGINAS_LUCAS = [
 
 const PERMITIDO_CARO = [
     "listado" => ["dir" => "Prendas/listado.php"],
+    "listado2" => ["dir" => "Prendas/listado2.php"],
     "stats" => ["dir" => "Stats/stats.php"],
     "prendas" => ["dir" => "Prendas/prendas.php"],
     "editarPrenda" => ["dir" => "Prendas/editarPrenda.php"],
@@ -60,6 +61,7 @@ const PERMITIDO_CARO = [
 
 const PAGINAS_CARO = [
     "listado" => ["nombre" => "Listado de prendas", "icon" => "fas fa-ellipsis-v"],
+    "listado2" => ["nombre" => "Listado de prendas 2", "icon" => "fas fa-ellipsis-v"],
     "stats" => ["nombre" => "Estadísticas", "icon" => "fas fa-chart-bar"],
     "prendas" => ["nombre" => "Prendas", "icon" => "fas fa-tshirt"],
     "telas" => ["nombre" => "Telas", "icon" => "fas fa-scroll"],
