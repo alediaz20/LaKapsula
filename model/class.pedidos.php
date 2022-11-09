@@ -95,6 +95,46 @@ class cPedidos extends cKapsula
         }
         return $maspedidos;
     }
+    
+    /**
+     * Devuelve cantidad de pedidos por mes, pasarle true si quiere solo los pedidos entregados
+     *
+     * @return pedidosmensuales
+     */
+    public function getPedidosMensuales($entregados = false)
+    {
+        if($entregados){
+            $sql = "SELECT COUNT(*) as cantidad, MONTHNAME(p.fecha_pedido) AS Mes FROM `".$this->mainTable."` p GROUP BY Mes WHERE fecha_entrega != '0000-00-00 00:00:00'";
+        }else{
+            $sql = "SELECT COUNT(*) as cantidad, MONTHNAME(p.fecha_pedido) AS Mes FROM `".$this->mainTable."` p GROUP BY Mes";
+        }
+        $result = $this->mysqli->query($sql);
+        if ($result) {
+            while ($row = $result->fetch_object()) {
+                $pedidosMensuales[] = $row;
+            }
+            $result->close();
+        }
+        return $pedidosMensuales;
+    }
+
+    /**
+     * Devuelve cantidad de pedidos entre fechas
+     *
+     * @return MasPedidos
+     */
+    public function getPedidosEntreFechas($fecha_desde,$fecha_hasta)
+    {
+        $sql = "SELECT COUNT(*) as cantidad FROM `".$this->mainTable."` WHERE fecha_pedido BETWEEN '".$fecha_desde."' AND '".$fecha_hasta."'";
+        $result = $this->mysqli->query($sql);
+        if ($result) {
+            while ($row = $result->fetch_object()) {
+                $pedidosMensuales[] = $row;
+            }
+            $result->close();
+        }
+        return $pedidosMensuales;
+    }
 
     /**
      * Devuelve cantidad de pedidos entregados
@@ -122,7 +162,7 @@ class cPedidos extends cKapsula
 
         //Obtengo cliente para actualizar
         $cliente = $cCliente->getClienteByName($nombre);
-  
+
         if ($cliente) {
             $monto_debe = $cliente[0]->monto_debe + $data['precio'];
             $cCliente->updateClienteMonto($monto_debe, $cliente[0]->id);
