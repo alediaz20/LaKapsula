@@ -52,40 +52,32 @@ function entregar(id,nombre,nombreprenda){
     });
 }
 
-function entregar_a_klt(id,nombreprenda){
-    data = {"id":id}
-    Swal.fire({
-        title: 'Entregar '+nombreprenda+'?',
-        showCancelButton: true,
-        confirmButtonText: 'Entregar',
-    }).then((result) => {
-        if (result.isConfirmed) {
-            $.ajax({
-                url: "../../ajax/Pedidos/entregarAKlt.php",
-                type: "POST",
-                data: data
-                }).done(function(){
-                    location.href = 'http://www.capsula.local/index.php?pagina=pedidosConfeccion'
-                });
-        } 
-    });
-}
 
 $(document).ready(function(){
+    var today = new Date();
+    var day = today.getDate();
+    var month = today.getMonth() + 1;
+    var year = today.getFullYear();
+hoy = day + "-" + month + "-" + year;
+    // let hoy = getLocalDay(tiempoTranscurrido);
     $('#pedidos').DataTable({
         responsive: true,
         dom: 'lBfrtip',
         buttons: [
             {
                 extend: 'excel',
-                // className: 'dt-button',
                 text: '<i class="fa-solid fa-file-excel"></i> Exportar Excel',
-                className: 'btn btn-success'
+                className: 'btn btn-success',
+                title: 'Pedidos hasta ' + hoy,
+                excelStyles: {                      // Add an excelStyles definition
+                    template:['blue_medium' , 'header_cyan']
+                },
             },
             {
                 extend: 'pdfHtml5',
                 text: '<i class="fas fa-file-pdf"></i> Exportar PDF',
-                className: 'btn btn-danger'
+                className: 'btn btn-danger',
+                title: 'Pedidos hasta ' + hoy,
             }
         ],
         language:{
