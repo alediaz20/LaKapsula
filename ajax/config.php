@@ -19,7 +19,8 @@ const TBL_COBROS = 'cobros';
 
 
 const PERMITIDO_LUCAS = [
-    "listado" => ["dir" => "Prendas/listado.php"],
+    // "listado" => ["dir" => "Prendas/listado.php"],
+    "listado2" => ["dir" => "Prendas/listado2.php"],
     "stats" => ["dir" => "Stats/stats.php"],
     "pedidos" => ["dir" => "Pedidos/pedidos.php"],
     "nuevoPedido" => ["dir" => "Pedidos/nuevoPedido.php"],
@@ -31,7 +32,8 @@ const PERMITIDO_LUCAS = [
 
 
 const PAGINAS_LUCAS = [
-    "listado" => ["nombre" => "Listado de prendas", "icon" => "fas fa-ellipsis-v"],
+    // "listado" => ["nombre" => "Listado de prendas", "icon" => "fas fa-ellipsis-v"],
+    "listado2" => ["nombre" => "Listado de prendas", "icon" => "fas fa-ellipsis-v"],
     "stats" => ["nombre" => "Estadísticas", "icon" => "fas fa-chart-bar"],
     "nuevoPedido" => ["nombre" => "Nuevo Pedido", "icon" => "fas fa-cart-plus"],
     "pedidos" => ["nombre" => "Ver Pedidos", "icon" => "fas fa-eye"],
@@ -40,7 +42,7 @@ const PAGINAS_LUCAS = [
 ];
 
 const PERMITIDO_CARO = [
-    "listado" => ["dir" => "Prendas/listado.php"],
+    // "listado" => ["dir" => "Prendas/listado.php"],
     "listado2" => ["dir" => "Prendas/listado2.php"],
     "stats" => ["dir" => "Stats/stats.php"],
     "prendas" => ["dir" => "Prendas/prendas.php"],
@@ -60,8 +62,8 @@ const PERMITIDO_CARO = [
 ];
 
 const PAGINAS_CARO = [
-    "listado" => ["nombre" => "Listado de prendas", "icon" => "fas fa-ellipsis-v"],
-    "listado2" => ["nombre" => "Listado de prendas 2", "icon" => "fas fa-ellipsis-v"],
+    // "listado" => ["nombre" => "Listado de prendas", "icon" => "fas fa-ellipsis-v"],
+    "listado2" => ["nombre" => "Listado de prendas", "icon" => "fas fa-ellipsis-v"],
     "stats" => ["nombre" => "Estadísticas", "icon" => "fas fa-chart-bar"],
     "prendas" => ["nombre" => "Prendas", "icon" => "fas fa-tshirt"],
     "telas" => ["nombre" => "Telas", "icon" => "fas fa-scroll"],

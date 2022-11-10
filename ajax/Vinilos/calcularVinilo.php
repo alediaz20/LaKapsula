@@ -7,7 +7,7 @@ $result = $cVinilos->calcularCorte($post);
 
 ?>
 <div class="card-body">
-    <div class="mb-4 btn btn-kuality success">
+    <div class="mb-4 btn btn-kuality white">
         <h1 class="text-center" id="resultado1">
             Precio a cobrar $ <?php echo $result["a_cobrar"]; ?>
         </h1>

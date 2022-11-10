@@ -48,7 +48,7 @@ $cliente = $cClientes->getclienteById($id);
                 <input type="submit" class="btn btn-kuality" value="Guardar"></input>
             </div> -->
         </form>
-        <button onclick="AgregarDinero()" class="btn btn-kuality">Agregar</button>
+        <button onclick="AgregarDinero()" class="btn btn-kuality"><i class="fas fa-plus"></i> Agregar</button>
         </div>  
 
     </div>

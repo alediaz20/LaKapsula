@@ -1,3 +1,7 @@
+:root {
+  --klt-color: rgb(3, 130, 134);
+}
+
 .container {
   display: grid;
 
@@ -54,8 +58,8 @@
 
 .btn-kuality:hover {
   color: #fff;
-  background-color: rgb(3, 130, 134);
-  border-color: rgb(3, 130, 134);
+  background-color: var(--klt-color);
+  border-color: var(--klt-color);
   box-shadow: 2px 2px #8888884b;
 }
 
@@ -63,16 +67,16 @@
 .btn-kuality.focus {
   color: #fff;
 
-  background-color: rgb(3, 130, 134);
+  background-color: var(--klt-color);
 
-  border-color: rgb(3, 130, 134);
+  border-color: var(--klt-color);
 
-  box-shadow: 0 0 0 0 rgb(3, 130, 134);
+  box-shadow: 0 0 0 0 var(--klt-color);
 }
 
 .btn-kuality.warning {
   background-color: rgb(255, 202, 55) !important;
-  color:black !important;
+  color: black !important;
   border-color: rgb(255, 202, 55) !important;
 }
 
@@ -82,12 +86,18 @@
   color: green !important;
 }
 
+.btn-kuality.white {
+  border-color: var(--klt-color) !important;
+  background-color: white !important;
+  color: var(--klt-color) !important;
+}
+
 .text-kuality {
-  color: rgb(3, 130, 134);
+  color: var(--klt-color);
 }
 
 .bg-kuality {
-  background-color: rgb(3, 130, 134);
+  background-color: var(--klt-color);
 
   color: white;
 }
@@ -174,15 +184,32 @@ body {
 }
 
 .dt-buttons .dt-button {
-  color: white !important;
+  margin-left: 5px !important;
+  color: #fff !important;
   background-color: rgb(3 152 158) !important;
-  background-image: none !important;
   border-color: rgb(3 152 158) !important;
   box-shadow: none !important;
-  padding: 6px !important;
-  margin-left: 10px !important;
-
+  border-radius: 20px !important;
 }
+
+.dt-buttons .dt-button:hover {
+  color: #fff !important;
+  background-color: var(--klt-color) !important;
+  border-color: var(--klt-color) !important;
+  box-shadow: 2px 2px #8888884b !important;
+}
+
+.dataTables_wrapper .dataTables_filter input{
+  background-color: white !important;
+  border-radius: 20px !important;
+  border-color: var(--klt-color) !important;
+  padding: 3 !important;
+  text-align: center !important;
+  outline-color: var(--klt-color) !important;
+  outline-offset: 0px !important;
+}
+
+
 
 .paginate_button.current,
 .paginate_button.previous,
@@ -204,7 +231,7 @@ body {
 }
 
 .select2-selection__choice {
-  background-color: rgb(3, 130, 134) !important;
+  background-color: var(--klt-color) !important;
   color: white !important;
 }
 
@@ -217,24 +244,25 @@ body {
 
 .btn-listado:hover {
   color: #fff;
-  background-color: rgb(3, 130, 134);
-  border-color: rgb(3, 130, 134);
+  background-color: var(--klt-color);
+  border-color: var(--klt-color);
 }
 
 .btn-listado:focus,
 .btn-listado.focus {
   color: #fff;
 
-  background-color: rgb(3, 130, 134);
+  background-color: var(--klt-color);
 
-  border-color: rgb(3, 130, 134);
+  border-color: var(--klt-color);
 
-  box-shadow: 0 0 0 0 rgb(3, 130, 134);
+  box-shadow: 0 0 0 0 var(--klt-color);
 }
 
-.btn-listado.eliminar{
-  background-color:rgb(165, 2, 2);
+.btn-listado.eliminar {
+  background-color: rgb(165, 2, 2);
 }
-.btn-listado.entregar{
-  background-color:rgb(91, 91, 255);
+
+.btn-listado.entregar {
+  background-color: rgb(91, 91, 255);
 }

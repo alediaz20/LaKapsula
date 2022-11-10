@@ -17,8 +17,7 @@ $cobros = $cCobros->getCobros();
                     <input class="form-control form-control-border border-width-2" type="text" id="monto_total">
                 </div>
             </div>
-
-            <button class="btn btn-kuality mt-3" onclick="agregarCobro()">Confirmar</button>
+            <button class="btn btn-kuality mt-3" onclick="agregarCobro()"><i class="fas fa-check"></i> Confirmar</button>
         </div>
     </div>
 
