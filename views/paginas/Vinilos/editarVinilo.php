@@ -24,13 +24,13 @@ foreach ($vinilos as $key => $value){
                 <label for="tela_precio">Precio</label>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                        <span class="btn btn-info btn-flat"><i class="fas fa-dollar-sign"></i></span>
+                        <span class="btn btn-kuality btn-flat"><i class="fas fa-dollar-sign"></i></span>
                     </div>
                     <input type="number" class="form-control form-control-border border-width-2" id="precio" placeholder="Precio" value ="<?php echo $tela->precio?>">
                 </div>
             </div>  
             <!-- <div class="card-footer">
-                <input type="submit" class="btn btn-primary" value="Guardar"></input>
+                <input type="submit" class="btn btn-kuality" value="Guardar"></input>
             </div> -->
         </form>
     </div>

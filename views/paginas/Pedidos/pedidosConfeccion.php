@@ -43,10 +43,10 @@ if(isset($pedidos)){ ?>
                 ?></td>
                         <?php if($value->entregado_a_klt == null){ ?>
                         <td>
-                        <button class="btn btn-kuality" onclick="entregar_a_klt('<?php echo $value->id?>','<?php echo $value->prenda?>')">Entregar</button>
+                        <button class="btn btn-listado entregar" onclick="entregar_a_klt('<?php echo $value->id?>','<?php echo $value->prenda?>')"><i class="fa-solid fa-hand-holding-heart"></i> Entregar</button>
                         </td>
                         <?php } else { ?>
-                            <td><button class="btn btn-success">ENTREGADO</button></td> 
+                            <td><button class="btn btn-kuality success"><i class="fas fa-check"></i>  ENTREGADO</button></td> 
                     <?php } ?>
             </tr>
         <?php }}else{?>

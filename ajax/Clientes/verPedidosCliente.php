@@ -49,13 +49,13 @@ if(!isset($cliente_pedidos)){ ?>
                         ?></td>
                     <?php if ($value->fecha_entrega == "0000-00-00 00:00:00") { ?>
                         <td>
-                            <button class="btn btn-kuality" onclick="entregar('<?php echo $value->id ?>','<?php echo $value->nombre_apellido ?>','<?php echo $value->prenda ?>')">Entregar</button>
+                            <button class="btn btn-listado entregar" onclick="entregar('<?php echo $value->id ?>','<?php echo $value->nombre_apellido ?>','<?php echo $value->prenda ?>')"><i class="fas fa-shopping-bag"></i> Entregar</button>
                         </td>
                     <?php } else { ?>
-                        <td><button class="btn btn-success">ENTREGADO</button></td>
+                        <td><button class="btn btn-kuality success"><i class="fas fa-check"></i> ENTREGADO</button></td>
                     <?php } ?>
                     <td>
-                        <button class="btn btn-danger" onclick="eliminar('<?php echo $value->id ?>','<?php echo $value->nombre_apellido ?>')">Eliminar</button>
+                        <button class="btn btn-listado eliminar" onclick="eliminar('<?php echo $value->id ?>','<?php echo $value->nombre_apellido ?>')"><i class="fas fa-trash-alt"></i></button>
                     </td>
                 </tr>
             <?php 
@@ -69,6 +69,7 @@ if(!isset($cliente_pedidos)){ ?>
                 }
             }
         } ?>
+            <tr><td colspan="9"><hr></td></tr>
             <tr>
                 <td><b>PRECIO TOTAL:</b></td>
                 <td>$<?php echo $monto_debe ?></td>
@@ -78,14 +79,14 @@ if(!isset($cliente_pedidos)){ ?>
                 <td>
                     
                 <?php if(($monto_debe - $monto_entrega) == 0){ ?>
-                    <button class="btn btn-success">PAGADO</button>
+                    <button class="btn btn-kuality success">PAGADO</button>
                 <?php }else{ 
                     echo "$".($monto_debe - $monto_entrega);
                 } ?>
                 </td>
-                <td>
+                <td colspan="2">
                 <?php if(($monto_debe - $monto_entrega) != 0){ ?>
-                    <a href="index.php?pagina=agregarDinero&id=<?php echo $idCliente ?>" class="btn btn-primary">Agregar dinero</a>
+                    <a href="index.php?pagina=agregarDinero&id=<?php echo $idCliente ?>" class="btn btn-kuality text-center"><i class="fas fa-plus-circle"></i> Agregar dinero</a>
                 <?php } ?>
                 </td>
             </tr>

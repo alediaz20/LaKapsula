@@ -23,7 +23,7 @@ foreach ($telas as $key => $value){
                 <label for="tela_precio">Precio x Kg</label>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                        <span class="btn btn-info btn-flat"><i class="fas fa-dollar-sign"></i></span>
+                        <span class="btn btn-kuality btn-flat"><i class="fas fa-dollar-sign"></i></span>
                     </div>
                     <input type="number" class="form-control form-control-border border-width-2" id="tela_precio" placeholder="Precio" value ="<?php echo $tela->precio_por_kg?>">
                 </div>
@@ -34,7 +34,7 @@ foreach ($telas as $key => $value){
             </div>  
         </form>
         <div class="card-footer">
-            <button class="btn btn-primary" onclick="editTela()">Guardar</button>
+            <button class="btn btn-kuality" onclick="editTela()">Guardar</button>
         </div>
     </div>
 </div>

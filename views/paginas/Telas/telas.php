@@ -12,7 +12,7 @@
                 <label for="tela_precio">Precio x Kg</label>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                        <span class="btn btn-info btn-flat"><i class="fas fa-dollar-sign"></i></span>
+                        <span class="btn btn-kuality btn-flat"><i class="fas fa-dollar-sign"></i></span>
                     </div>
                     <input type="number" class="form-control form-control-border border-width-2" id="tela_precio" placeholder="Precio">
                 </div>
@@ -23,7 +23,7 @@
             </div>
         </form>
         <div class="card-footer">
-            <button class="btn btn-primary" onclick="saveTela()">Guardar</button>
+            <button class="btn btn-kuality" onclick="saveTela()">Guardar</button>
         </div>
     </div>
     <?php require_once("ajax/Telas/getTelas.php"); ?>
@@ -51,7 +51,7 @@
                             <td>$<?php echo $value->precio_por_kg; ?></td>
                             <td><?php echo $value->metros_por_kg; ?></td>
                             <td>$<?php echo $value->precio_por_metro; ?></td>
-                            <td><a href="index.php?pagina=editarTela&id=<?php echo $value->id ?>" class="btn btn-info">Editar</a></td>
+                            <td><a href="index.php?pagina=editarTela&id=<?php echo $value->id ?>" class="btn btn-kuality">Editar</a></td>
                         </tr>
                     <?php } ?>
                 </tbody>

@@ -32,7 +32,7 @@ $costo = $cPrendas->calcularCostos();
                 <label for="precio">Precio</label>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                        <span class="btn btn-info btn-flat"><i class="fas fa-dollar-sign"></i></span>
+                        <span class="btn btn-kuality btn-flat"><i class="fas fa-dollar-sign"></i></span>
                     </div>
                     <input type="text" class="form-control form-control-border border-width-2" id="precio" name="precio" placeholder="precio" value="seleccione una opción" readonly>
                 </div>
@@ -41,14 +41,14 @@ $costo = $cPrendas->calcularCostos();
                 <div class="d-flex justify-content-arround">
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
-                            <span class="btn btn-info btn-flat"><i class="fas fa-percent"></i></span>
+                            <span class="btn btn-kuality btn-flat"><i class="fas fa-percent"></i></span>
                         </div>
                         <input type="text" class="form-control form-control-border border-width-2" id="porc_descuento" name="porc_descuento" onchange="aplicarDescuento()" placeholder="Descuento">
                     </div>
 
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
-                            <span class="btn btn-info btn-flat"><i class="fas fa-dollar-sign"></i></span>
+                            <span class="btn btn-kuality btn-flat"><i class="fas fa-dollar-sign"></i></span>
                         </div>
                         <input type="text" class="form-control form-control-border border-width-2" id="total_descuento" name="total_descuento" readonly placeholder="Total descuento">
                     </div>
@@ -70,7 +70,7 @@ $costo = $cPrendas->calcularCostos();
             </div>
         </form>
         <div class="card-footer">
-            <button class="btn btn-primary" onclick="nuevoPedido()">Guardar</button>
+            <button class="btn btn-kuality" onclick="nuevoPedido()">Guardar</button>
         </div>
     </div>
 </div>

@@ -45,7 +45,7 @@ function entregar(id,nombre,nombreprenda){
                 type: "POST",
                 data: data
                 }).done(function(){
-                    location.href = 'http://www.capsula.local/index.php?pagina=pedidos'
+                    verPedidos(nombre);
                 });
         } 
     });

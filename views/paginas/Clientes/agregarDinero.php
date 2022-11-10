@@ -14,7 +14,7 @@ $cliente = $cClientes->getclienteById($id);
                     <label for="precio">Total pedido</label>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
-                            <span class="btn btn-info btn-flat"><i class="fas fa-dollar-sign"></i></span>
+                            <span class="btn btn-kuality btn-flat"><i class="fas fa-dollar-sign"></i></span>
                         </div>
                         <input type="text" class="form-control form-control-border border-width-2" id="precio" value="<?php echo $cliente->monto_debe?>" readonly>
                     </div>
@@ -23,7 +23,7 @@ $cliente = $cClientes->getclienteById($id);
                     <label for="entrega_anterior">Entrega anterior</label>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
-                            <span class="btn btn-info btn-flat"><i class="fas fa-dollar-sign"></i></span>
+                            <span class="btn btn-kuality btn-flat"><i class="fas fa-dollar-sign"></i></span>
                         </div>
                         <input type="text" class="form-control form-control-border border-width-2" id="entrega_anterior" value="<?php echo $cliente->monto_entrega?>" readonly>
                     </div>
@@ -32,7 +32,7 @@ $cliente = $cClientes->getclienteById($id);
                     <label for="entrega_anterior">Resta abonar</label>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
-                            <span class="btn btn-info btn-flat"><i class="fas fa-dollar-sign"></i></span>
+                            <span class="btn btn-kuality btn-flat"><i class="fas fa-dollar-sign"></i></span>
                         </div>
                         <input type="text" class="form-control form-control-border border-width-2" id="resto" value="<?php echo ($cliente->monto_debe - $cliente->monto_entrega)?>" readonly>
                     </div>
@@ -40,12 +40,12 @@ $cliente = $cClientes->getclienteById($id);
                 <label for="nueva_entrega">Nueva entrega</label>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                        <span class="btn btn-info btn-flat"><i class="fas fa-dollar-sign"></i></span>
+                        <span class="btn btn-kuality btn-flat"><i class="fas fa-dollar-sign"></i></span>
                     </div>
                     <input type="number" class="form-control form-control-border border-width-2" id="nueva_entrega" placeholder="Nueva entrega">
                 </div>
             <!-- <div class="card-footer">
-                <input type="submit" class="btn btn-primary" value="Guardar"></input>
+                <input type="submit" class="btn btn-kuality" value="Guardar"></input>
             </div> -->
         </form>
         <button onclick="AgregarDinero()" class="btn btn-kuality">Agregar</button>

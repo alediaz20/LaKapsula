@@ -46,7 +46,7 @@ function entregar_a_klt(id,nombreprenda){
                 type: "POST",
                 data: data
                 }).done(function(){
-                    location.href = 'http://www.capsula.local/index.php?pagina=pedidosConfeccion'
+                    location.href = 'http://capsula.local/index.php?pagina=pedidosConfeccion'
                 });
         } 
     });

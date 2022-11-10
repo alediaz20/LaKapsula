@@ -39,7 +39,7 @@ require_once(DIR_MODEL."class.telas.php");
             </div>
         </form>
             <div class="card-footer">
-                <button class="btn btn-primary" onclick="savePrenda()">Guardar</button>
+                <button class="btn btn-kuality" onclick="savePrenda()">Guardar</button>
             </div>
     </div>
     <div class="card card-primary">
@@ -62,7 +62,7 @@ require_once(DIR_MODEL."class.telas.php");
                             <td><?php echo $value->id; ?></td>
                             <td><?php echo $value->nombre; ?></td>
                             <td><?php echo $value->telas; ?></td>
-                            <td><a href="index.php?pagina=editarPrenda&id=<?php echo $value->id ?>" class="btn btn-info">Editar</a></td>
+                            <td><a href="index.php?pagina=editarPrenda&id=<?php echo $value->id ?>" class="btn btn-kuality">Editar</a></td>
                         </tr>
                     <?php } ?>
                 </tbody>

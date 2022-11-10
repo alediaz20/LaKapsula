@@ -46,7 +46,7 @@
                 </div>
             </div>
             <div class="card-footer text-center">
-                <input type="button" class="btn btn-info" onclick="calcular()" value="Calcular" i="">
+                <input type="button" class="btn btn-kuality" onclick="calcular()" value="Calcular" i="">
             </div>
             <div class="card-footer text-center" id="resultado" style="display:none;">
             </div>
@@ -73,7 +73,7 @@
                             <td><?php echo $value->id; ?></td>
                             <td><?php echo $value->nombre_para_mostrar; ?></td>
                             <td>$<?php echo $value->precio; ?></td>
-                            <td><a href="index.php?pagina=editarVinilo&id=<?php echo $value->id ?>" class="btn btn-info">Editar</a></td>
+                            <td><a href="index.php?pagina=editarVinilo&id=<?php echo $value->id ?>" class="btn btn-kuality">Editar</a></td>
                         </tr>
                     <?php } ?>
                 </tbody>

@@ -196,13 +196,19 @@ class cPedidos extends cKapsula
         $result = $this->mysqli->query($sql);
         return $result;
     }
-    public function updatePedido()
+
+    public function entregarPrenda($id)
     {
+        $fechaahora = date("Y:m:d h:m:s");
+        $sql = "UPDATE `".$this->mainTable."` SET `fecha_entrega`='".$fechaahora."' WHERE id = ".$id;
+        $result = $this->mysqli->query($sql);
+        return $result;
     }
-    public function entregarPrenda()
+    public function entregarKLT($id)
     {
-    }
-    public function entregarKLT()
-    {
+        $fechaahora = date("Y:m:d h:m:s");
+        $sql = "UPDATE `".$this->mainTable."` SET `entregado_a_klt`='".$fechaahora."' WHERE id = ".$id;
+        $result = $this->mysqli->query($sql);
+        return $result;
     }
 }

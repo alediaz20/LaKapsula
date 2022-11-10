@@ -34,7 +34,7 @@ foreach($clientes as $key => $value){
                         <tr>
                             <td><?php echo strtoupper($key); ?></td>
                             <td>
-                                <button class="btn btn-warning" onclick="verPedidos('<?php echo $key ?>')"><i class="fas fa-eye"></i></button>
+                                <button class="btn btn-kuality warning" onclick="verPedidos('<?php echo $key ?>')"><i class="fas fa-eye"></i></button>
                             </td>
                         </tr>
                     <?php }}else{?>

@@ -18,7 +18,7 @@
   gap: 20px;
 }
 
-.container-pedidos{
+.container-pedidos {
   display: grid;
 
   grid-template-columns: 1.3fr 3fr;
@@ -46,20 +46,17 @@
 
 .btn-kuality {
   color: #fff;
-
   background-color: rgb(3 152 158);
-
   border-color: rgb(3 152 158);
-
   box-shadow: none;
+  border-radius: 20px;
 }
 
 .btn-kuality:hover {
   color: #fff;
-
   background-color: rgb(3, 130, 134);
-
   border-color: rgb(3, 130, 134);
+  box-shadow: 2px 2px #8888884b;
 }
 
 .btn-kuality:focus,
@@ -71,6 +68,18 @@
   border-color: rgb(3, 130, 134);
 
   box-shadow: 0 0 0 0 rgb(3, 130, 134);
+}
+
+.btn-kuality.warning {
+  background-color: rgb(255, 202, 55) !important;
+  color:black !important;
+  border-color: rgb(255, 202, 55) !important;
+}
+
+.btn-kuality.success {
+  border-color: green !important;
+  background-color: white !important;
+  color: green !important;
 }
 
 .text-kuality {
@@ -120,7 +129,7 @@
 }
 
 .nav-pills .nav-link.active,
-.nav-pills .show > .nav-link {
+.nav-pills .show>.nav-link {
   background-color: white;
 
   color: rgba(3, 130, 134, 0.795) !important;
@@ -144,10 +153,10 @@
   color: black !important;
 }
 
-.btn-primary {
+.btn-kuality {
   background-color: rgba(3, 130, 134, 0.795) !important;
-
   color: white !important;
+  border-radius: 20px;
 }
 
 body {
@@ -161,10 +170,10 @@ body {
 }
 
 .dataTables_wrapper .dt-buttons {
-  float:right !important;
+  float: right !important;
 }
 
-.dt-buttons .dt-button{
+.dt-buttons .dt-button {
   color: white !important;
   background-color: rgb(3 152 158) !important;
   background-image: none !important;
@@ -172,12 +181,12 @@ body {
   box-shadow: none !important;
   padding: 6px !important;
   margin-left: 10px !important;
-  
+
 }
 
 .paginate_button.current,
 .paginate_button.previous,
-.paginate_button.next{
+.paginate_button.next {
   color: white !important;
   background-color: rgb(3 152 158) !important;
   background-image: none !important;
@@ -194,8 +203,38 @@ body {
   overflow: hidden;
 }
 
-.select2-selection__choice{
-  background-color:rgb(3, 130, 134) !important;
-  color:white !important;
+.select2-selection__choice {
+  background-color: rgb(3, 130, 134) !important;
+  color: white !important;
 }
 
+
+.btn-listado {
+  color: #fff;
+  box-shadow: none;
+  border-radius: 20px;
+}
+
+.btn-listado:hover {
+  color: #fff;
+  background-color: rgb(3, 130, 134);
+  border-color: rgb(3, 130, 134);
+}
+
+.btn-listado:focus,
+.btn-listado.focus {
+  color: #fff;
+
+  background-color: rgb(3, 130, 134);
+
+  border-color: rgb(3, 130, 134);
+
+  box-shadow: 0 0 0 0 rgb(3, 130, 134);
+}
+
+.btn-listado.eliminar{
+  background-color:rgb(165, 2, 2);
+}
+.btn-listado.entregar{
+  background-color:rgb(91, 91, 255);
+}

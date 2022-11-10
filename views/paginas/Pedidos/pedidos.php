@@ -66,14 +66,13 @@ require_once("model/class.pedidos.php");
                 <td><?php echo "$".$value->precio; ?></td>
                 <td><?php $fecha = date_create($value->fecha_pedido); 
                             echo date_format($fecha,"d/m/Y"); ?></td>
-                <td><?php
+                <?php
                     if($value->fecha_entrega == "0000-00-00 00:00:00"){?>
-                        NO
+                <td> NO </td>
                     <?php }else{
                         $fecha_entrega = date_create($value->fecha_entrega); ?>
-                        <td><button class="btn btn-success"><?php echo date_format($fecha_entrega,"d/m/Y");?></button></td> 
+                        <td><button class="btn btn-kuality success"><?php echo date_format($fecha_entrega,"d/m/Y");?></button></td> 
                     <?php   } ?>
-                </td>
                     <?php } ?>
             </tr>
         <?php }else{?>

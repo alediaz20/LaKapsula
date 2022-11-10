@@ -12,7 +12,7 @@ $cobros = $cCobros->getCobros();
             <div class="form-group">
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                        <span class="btn btn-info btn-flat"><i class="fas fa-dollar-sign"></i></span>
+                        <span class="btn btn-kuality btn-flat"><i class="fas fa-dollar-sign"></i></span>
                     </div>
                     <input class="form-control form-control-border border-width-2" type="text" id="monto_total">
                 </div>
