@@ -3,8 +3,7 @@ $(document).ready(function(){
     var day = today.getDate();
     var month = today.getMonth() + 1;
     var year = today.getFullYear();
-hoy = day + "-" + month + "-" + year;
-    // let hoy = getLocalDay(tiempoTranscurrido);
+    hoy = day + "-" + month + "-" + year;
     $('#pedidos').DataTable({
         responsive: true,
         dom: 'lBfrtip',

@@ -27,7 +27,6 @@ function eliminar(id,nombre){
                 data: data
                 }).done(function(){
                     verPedidos(nombre);
-                    // location.href = 'http://capsula.local/index.php?pagina=clientes&nombre='+nombre;
                 });
         } 
     });
@@ -59,7 +58,6 @@ $(document).ready(function(){
     var month = today.getMonth() + 1;
     var year = today.getFullYear();
 hoy = day + "-" + month + "-" + year;
-    // let hoy = getLocalDay(tiempoTranscurrido);
     $('#pedidos').DataTable({
         responsive: true,
         dom: 'lBfrtip',
