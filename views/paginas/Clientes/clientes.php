@@ -38,7 +38,9 @@ foreach($clientes as $key => $value){
                             </td>
                         </tr>
                     <?php }}else{?>
-                        NO HAY CLIENTES PARA MOSTRAR
+                        <div class="d-flex justify-content-center">
+                            <h1 class="btn btn-kuality white">No hay clientes para mostrar</h1>
+                        </div>
                     <?php } ?>
                 </tbody>
             </table>
@@ -51,7 +53,9 @@ foreach($clientes as $key => $value){
     </div>
 </div>
 <?php }else{ ?>
-NO HAY CLIENTES PARA MOSTRAR
+    <div class="d-flex justify-content-center">
+        <h1 class="btn btn-kuality white">No hay clientes para mostrar</h1>
+    </div>
 <?php } ?>
 
 <script src="../js/pedidosCliente.js"></script>

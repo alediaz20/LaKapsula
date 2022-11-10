@@ -8,7 +8,9 @@ $clientesData = $cClientes->getClienteByName($post['nombre']);
 
 
 if(!isset($cliente_pedidos)){ ?>
-    <h4>No hay pedidos para mostrar</h4>
+<div class="d-flex justify-content-center">
+    <h1 class="btn btn-kuality white">No hay pedidos para mostrar</h1>
+</div>
 <?php }else{ ?>
 
 <table class="table table-borderless table-hover table-responsive">

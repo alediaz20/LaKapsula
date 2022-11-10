@@ -44,9 +44,6 @@ $cliente = $cClientes->getclienteById($id);
                     </div>
                     <input type="number" class="form-control form-control-border border-width-2" id="nueva_entrega" placeholder="Nueva entrega">
                 </div>
-            <!-- <div class="card-footer">
-                <input type="submit" class="btn btn-kuality" value="Guardar"></input>
-            </div> -->
         </form>
         <button onclick="AgregarDinero()" class="btn btn-kuality"><i class="fas fa-plus"></i> Agregar</button>
         </div>  
