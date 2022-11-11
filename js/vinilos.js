@@ -51,7 +51,7 @@ function guardarVinilo(){
                     showConfirmButton: false,
                     timer: 2500,
                 });
-                location.href = "http://capsula.local/index.php?pagina=calcvinil";
+                location.href = "http://lakapsula.local/index.php?pagina=calcvinil";
             });
         }
     });

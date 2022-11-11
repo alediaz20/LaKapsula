@@ -17,7 +17,7 @@ function agregarCobro(){
                 type: "POST",
                 data: data
                 }).done(function(){
-                    location.href = 'http://capsula.local/index.php?pagina=cobros'
+                    location.href = 'http://lakapsula.local/index.php?pagina=cobros'
                 });
         } 
     });

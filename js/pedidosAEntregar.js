@@ -29,7 +29,7 @@ $(document).ready(function(){
         },
         "lengthMenu": [ 25, 50, 75, 100 ],
         "pageLength": 50,
-        order: [[0, 'desc']]
+        order: [[4, 'desc']]
     });
 });
 
@@ -46,8 +46,24 @@ function entregar_a_klt(id,nombreprenda){
                 type: "POST",
                 data: data
                 }).done(function(){
-                    location.href = 'http://capsula.local/index.php?pagina=pedidosConfeccion'
+                    location.href = 'http://lakapsula.local/index.php?pagina=pedidosConfeccion'
                 });
         } 
     });
+}
+
+function buscarPedidoEntreFechas(){
+    var fecha_desde = document.getElementById("fecha_desde").value
+    var fecha_hasta = document.getElementById("fecha_hasta").value
+    data = {
+        fecha_desde : fecha_desde,
+        fecha_hasta : fecha_hasta
+    }
+    $.ajax({
+        url: "../../ajax/Pedidos/pedidosEntreFechas.php",
+        type: "POST",
+        data: data
+        }).done(function(res){
+            $("#pedidos_entre_fechas").html(res);
+        });
 }

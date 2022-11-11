@@ -21,7 +21,7 @@ function editarPrenda() {
             type: "POST",
             data: data,
         }).done(function () {
-            location.href = "http://capsula.local/index.php?pagina=prendas";
+            location.href = "http://lakapsula.local/index.php?pagina=prendas";
         });
         }
     });
@@ -56,7 +56,7 @@ function savePrenda() {
             type: "POST",
             data: data,
         }).done(function () {
-            location.href = "http://capsula.local/index.php?pagina=prendas";
+            location.href = "http://lakapsula.local/index.php?pagina=prendas";
         });
         }
     });

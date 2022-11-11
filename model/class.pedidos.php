@@ -125,15 +125,18 @@ class cPedidos extends cKapsula
      */
     public function getPedidosEntreFechas($fecha_desde,$fecha_hasta)
     {
-        $sql = "SELECT COUNT(*) as cantidad FROM `".$this->mainTable."` WHERE fecha_pedido BETWEEN '".$fecha_desde."' AND '".$fecha_hasta."'";
+        $sql = "SELECT * FROM `".$this->mainTable."` WHERE fecha_pedido BETWEEN '".$fecha_desde."' AND '".$fecha_hasta."' AND prenda != 'MEDIAS K' ORDER BY prenda" ;
         $result = $this->mysqli->query($sql);
         if ($result) {
             while ($row = $result->fetch_object()) {
-                $pedidosMensuales[] = $row;
+                $pedidosEntreFechas[] = $row;
             }
             $result->close();
         }
-        return $pedidosMensuales;
+        if(!isset($pedidosEntreFechas)){
+            $pedidosEntreFechas = null;
+        }
+        return $pedidosEntreFechas;
     }
 
     /**

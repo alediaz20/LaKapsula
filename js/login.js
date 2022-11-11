@@ -18,7 +18,7 @@ function Login(){
                 timer: 2500,
             });
         }else{
-            window.location.href = 'http://capsula.local/index.php?pagina=listado2';
+            window.location.href = 'http://lakapsula.local/index.php?pagina=listado2';
         }
 });
 }

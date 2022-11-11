@@ -1,71 +1,89 @@
 <?php
-require_once("model/class.pedidos.php");
-$cPedidos = new cPedidos();
-$pedidos = $cPedidos->getPedidos();
+    require_once("model/class.pedidos.php");
+    $cPedidos = new cPedidos();
+    $pedidos = $cPedidos->getPedidos();
 ?>
-<div class="px-4">
-    <div class="card card-primary">
-        <div class="card-header">
-            <h3 class="card-title">Pedidos a confeccionar</h3>
-        </div>
-        <div class="card-body">
-            <table class="table table-borderless table-hover table-responsive" id="pedidos">
-                <?php
-                if (isset($pedidos)) { ?>
-                    <thead>
-                        <tr>
-                            <th>Nro Pedido</th>
-                            <th>Prenda</th>
-                            <th>Talle</th>
-                            <th>Nombre</th>
-                            <th>Fecha Pedido</th>
-                            <th>Entregado a kuality</th>
-                            <th>Marcar como entregado</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
-                        foreach ($pedidos as $key => $value) { ?>
+<div class="container-telas">
+    <div class="px-4">
+        <div class="card card-primary">
+            <div class="card-header">
+                <h3 class="card-title">Pedidos a confeccionar</h3>
+            </div>
+            <div class="card-body">
+                <table class="table table-borderless table-hover table-responsive" id="pedidos">
+                    <?php
+                    if (isset($pedidos)) { ?>
+                        <thead>
                             <tr>
-                                <td><?php echo $value->id; ?></td>
-                                <td><?php echo $value->prenda; ?></td>
-                                <td><?php echo $value->talle; ?></td>
-                                <td><?php echo $value->nombre_apellido; ?></td>
-                                <td><?php $fecha = date_create($value->fecha_pedido);
-                                    echo date_format($fecha, "d/m/Y"); ?></td>
-                                <td><?php
-                                    if ($value->entregado_a_klt == null) { ?>
-                                        NO
-                                    <?php } else {
-                                        $entregado_a_klt = date_create($value->entregado_a_klt);
-                                        echo date_format($entregado_a_klt, "d/m/Y");
-                                    }
-                                    ?></td>
-                                <?php if ($value->entregado_a_klt == null) { ?>
-                                    <td>
-                                        <button class="btn btn-listado entregar" onclick="entregar_a_klt('<?php echo $value->id ?>','<?php echo $value->prenda ?>')"><i class="fa-solid fa-hand-holding-heart"></i> Entregar</button>
-                                    </td>
-                                <?php } else { ?>
-                                    <td><button class="btn btn-kuality success"><i class="fas fa-check"></i> ENTREGADO</button></td>
-                                <?php } ?>
+                                <th>Nro Pedido</th>
+                                <th>Prenda</th>
+                                <th>Talle</th>
+                                <th>Nombre</th>
+                                <th>Fecha Pedido</th>
+                                <th>Entregado a kuality</th>
+                                <th>Marcar como entregado</th>
                             </tr>
-                        <?php }
-                    } else { ?>
-                        <div class="d-flex justify-content-center">
-                            <h1 class="btn btn-kuality white">No hay pedidos para mostrar</h1>
-                        </div>
-                    <?php } ?>
-                    </tbody>
-            </table>
+                        </thead>
+                        <tbody>
+                            <?php
+                            foreach ($pedidos as $key => $value) { ?>
+                                <tr>
+                                    <td><?php echo $value->id; ?></td>
+                                    <td><?php echo $value->prenda; ?></td>
+                                    <td><?php echo $value->talle; ?></td>
+                                    <td><?php echo $value->nombre_apellido; ?></td>
+                                    <td><?php $fecha = date_create($value->fecha_pedido);
+                                        echo date_format($fecha, "d/m/Y"); ?></td>
+                                    <td><?php
+                                        if ($value->entregado_a_klt == null) { ?>
+                                            NO
+                                        <?php } else {
+                                            $entregado_a_klt = date_create($value->entregado_a_klt);
+                                            echo date_format($entregado_a_klt, "d/m/Y");
+                                        }
+                                        ?></td>
+                                    <?php if ($value->entregado_a_klt == null) { ?>
+                                        <td>
+                                            <button class="btn btn-listado entregar" onclick="entregar_a_klt('<?php echo $value->id ?>','<?php echo $value->prenda ?>')"><i class="fa-solid fa-hand-holding-heart"></i> Entregar</button>
+                                        </td>
+                                    <?php } else { ?>
+                                        <td><button class="btn btn-kuality success"><i class="fas fa-check"></i> ENTREGADO</button></td>
+                                    <?php } ?>
+                                </tr>
+                            <?php }
+                        } else { ?>
+                            <div class="d-flex justify-content-center">
+                                <h1 class="btn btn-kuality white">No hay pedidos para mostrar</h1>
+                            </div>
+                        <?php } ?>
+                        </tbody>
+                </table>
+            </div>
         </div>
-
-
-
-
     </div>
+    <div class="px-4">
+        <div class="card card-primary">
+            <div class="card-header">
+                <h3 class="card-title">Pedidos entre fechas</h3>
+            </div>
+            <div class="d-flex justify-content-center p-3">
+                <input type="date" class="form-control form-control-border border-width-2" id="fecha_desde">
+                <input type="date" class="form-control form-control-border border-width-2" id="fecha_hasta">
+            </div>
+            <div class="d-flex justify-content-center p-3">
+                <button class="btn btn-listado entregar" onclick="buscarPedidoEntreFechas()"><i class="fas fa-search"></i> Buscar</button>
+            </div>
+            <div class="card-body" id="pedidos_entre_fechas">
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
 </div>
-
-
 <script src="../js/pedidosAEntregar.js"></script>
 <!-- jquery y bootstrap -->
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>

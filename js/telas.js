@@ -18,7 +18,7 @@ function saveTela() {
             type: "POST",
             data: data,
         }).done(function () {
-            location.href = "http://capsula.local/index.php?pagina=telas";
+            location.href = "http://lakapsula.local/index.php?pagina=telas";
         });
         }
     });
@@ -46,7 +46,7 @@ function editTela() {
             type: "POST",
             data: data,
         }).done(function () {
-            location.href = "http://capsula.local/index.php?pagina=telas";
+            location.href = "http://lakapsula.local/index.php?pagina=telas";
         });
         }
     });
