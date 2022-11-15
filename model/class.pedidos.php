@@ -159,6 +159,7 @@ class cPedidos extends cKapsula
         $cCliente = new cClientes();
 
         $nombre = strtolower($data['nombre']);
+        $nombre = preg_replace(array('/\s{2,}/', '/[\t\n]/'), ' ', $nombre);
 
         $sql = "INSERT into `" . $this->mainTable . "`(id_prenda,prenda,talle,nombre_apellido,precio,fecha_entrega) VALUES (" . $data['id_prenda'] . ",'" . $data['prenda'] . "','" . $data['talle'] . "','" . $nombre . "'," . $data['precio'] . ",'0000-00-00 00:00:00')";
         $result = $this->mysqli->query($sql);

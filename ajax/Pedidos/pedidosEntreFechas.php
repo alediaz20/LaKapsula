@@ -5,12 +5,14 @@ $cPedidos = new cPedidos();
 $fecha_desde = $_POST['fecha_desde'];
 $fecha_hasta = $_POST['fecha_hasta'];
 
+$fecha_hasta .= " 23:59:59";
+
 $pedidos = $cPedidos->getPedidosEntreFechas($fecha_desde, $fecha_hasta);
 
 ?>
 
 
-<table id="table-pedidos-entre-fechas" class="table">
+<table id="table-pedidos-entre-fechas" class="table table-borderless table-hover table-responsive">
     <thead>
         <tr>
             <th>Nro Pedido</th>
