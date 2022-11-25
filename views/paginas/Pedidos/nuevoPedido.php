@@ -67,6 +67,10 @@ $costo = $cPrendas->calcularCostos();
                         <?php } ?>
                     </select>
                 </div>
+                <label for="observaciones">Observaciones</label>
+                <div class="form-group">
+                    <textarea class="form-control" name="observaciones" id="observaciones" cols="4" rows="4"></textarea>
+                </div>
             </div>
         </form>
         <div class="card-footer">

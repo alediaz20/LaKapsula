@@ -156,12 +156,13 @@ class cPedidos extends cKapsula
     public function savePedido($data)
     {
         require_once("class.clientes.php");
+        require_once("../../includes/common.inc.php");
         $cCliente = new cClientes();
 
         $nombre = strtolower($data['nombre']);
         $nombre = preg_replace(array('/\s{2,}/', '/[\t\n]/'), ' ', $nombre);
 
-        $sql = "INSERT into `" . $this->mainTable . "`(id_prenda,prenda,talle,nombre_apellido,precio,fecha_entrega) VALUES (" . $data['id_prenda'] . ",'" . $data['prenda'] . "','" . $data['talle'] . "','" . $nombre . "'," . $data['precio'] . ",'0000-00-00 00:00:00')";
+        $sql = "INSERT into `" . $this->mainTable . "`(id_prenda,prenda,talle,nombre_apellido,precio,observaciones,fecha_entrega) VALUES (" . $data['id_prenda'] . ",'" . $data['prenda'] . "','" . $data['talle'] . "','" . $nombre . "'," . $data['precio'] . ",'". $data['observaciones'] ."','0000-00-00 00:00:00')";
         $result = $this->mysqli->query($sql);
 
         //Obtengo cliente para actualizar

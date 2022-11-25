@@ -59,6 +59,7 @@ $cantidadEntregado = $cPedidos->getCantidadEntregado();
                             <th>Precio</th>
                             <th>Fecha Pedido</th>
                             <th>Entregado a cliente</th>
+                            <th>Observaciones</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -78,10 +79,15 @@ $cantidadEntregado = $cPedidos->getCantidadEntregado();
                                 <?php } else {
                                     $fecha_entrega = date_create($value->fecha_entrega); ?>
                                     <td><button class="btn btn-kuality success"><?php echo date_format($fecha_entrega, "d/m/Y"); ?></button></td>
-                                <?php   } ?>
-                            <?php } ?>
+                                <?php   } 
+                                if($value->observaciones){ ?>
+                                    <td title="ver observaciones" class="text-center"><button class="btn btn-kuality" onclick="abrirModal(<?php echo $value->id?>,'<?php echo $value->observaciones ?>')"><i class="fas fa-external-link-alt"></i></button></td>
+                                <?php }else{ ?>
+                                        <td title="ver observaciones" class="text-center"> - </button></td>
+                                <?php } ?>
                             </tr>
-                        <?php } else { ?>
+                        <?php }
+                        }else{ ?>
                             <div class="d-flex justify-content-center">
                                 <h1 class="btn btn-kuality white">No hay pedidos para mostrar</h1>
                             </div>

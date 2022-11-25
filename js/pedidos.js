@@ -22,6 +22,7 @@ function nuevoPedido() {
     var prenda = document.getElementById("prenda").value;
     var talle = document.getElementById("talle").value;
     var precio = document.getElementById("precio").value;
+    var observaciones = document.getElementById("observaciones").value;
     let error = "";
 
     if (prenda == "Seleccione una prenda") {
@@ -49,8 +50,9 @@ function nuevoPedido() {
             prenda: prenda,
             talle: talle,
             precio: precio,
+            observaciones: observaciones
         };
-
+        console.log(data);
         $.ajax({
             url: "../ajax/Pedidos/nuevoPedido.php",
             type: "POST",
@@ -63,6 +65,7 @@ function nuevoPedido() {
                 showConfirmButton: false,
                 timer: 2500,
             });
+            // location.href = 'http://lakapsula.local/index.php?pagina=pedidos';
         });
     }
 }

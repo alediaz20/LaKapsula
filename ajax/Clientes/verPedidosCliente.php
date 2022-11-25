@@ -21,6 +21,7 @@ if(!isset($cliente_pedidos)){ ?>
                 <th>Talle</th>
                 <th>Nombre</th>
                 <th>Precio</th>
+                <th>Observaciones</th>
                 <th>Fecha Pedido</th>
                 <th>Entregado a cliente</th>
                 <th>Marcar como entregado</th>
@@ -38,7 +39,12 @@ if(!isset($cliente_pedidos)){ ?>
                     <td><?php echo $value->prenda; ?></td>
                     <td><?php echo $value->talle; ?></td>
                     <td><?php echo $value->nombre_apellido; ?></td>
-                    <td>$<?php echo $value->precio; ?></td>                
+                    <td>$<?php echo $value->precio; ?></td>     
+                    <?php if($value->observaciones){ ?>
+                        <td title="ver observaciones" class="text-center"><button class="btn btn-kuality" onclick="abrirModal(<?php echo $value->id?>,'<?php echo $value->observaciones ?>')"><i class="fas fa-external-link-alt"></i></button></td>
+                    <?php }else{ ?>
+                        <td title="ver observaciones" class="text-center"> - </button></td>
+                    <?php } ?>           
                     <td><?php $fecha = date_create($value->fecha_pedido);
                         echo date_format($fecha, "d/m/Y"); ?></td>
                     <td><?php
