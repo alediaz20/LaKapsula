@@ -19,6 +19,7 @@ $pedidos = $cPedidos->getPedidosEntreFechas($fecha_desde, $fecha_hasta);
             <th>Prenda</th>
             <th>Talle</th>
             <th>Nombre</th>
+            <th>Observaciones</th>
             <th>Fecha Pedido</th>
             <th>Entregado a kuality</th>
         </tr>
@@ -32,6 +33,7 @@ $pedidos = $cPedidos->getPedidosEntreFechas($fecha_desde, $fecha_hasta);
                     <td><?php echo $value->prenda; ?></td>
                     <td><?php echo $value->talle; ?></td>
                     <td><?php echo $value->nombre_apellido; ?></td>
+                    <td><?php echo $value->observaciones; ?></td>
                     <td><?php
                         $fecha = date_create($value->fecha_pedido);
                         echo date_format($fecha, "d/m/Y");
