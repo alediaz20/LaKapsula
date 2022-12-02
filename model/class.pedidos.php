@@ -74,7 +74,7 @@ class cPedidos extends cKapsula
      */
     public function getTotalPedidos()
     {
-        $result = $this->mysqli->query("SELECT * FROM `" . $this->mainTable . "` ORDER BY fecha_pedido DESC");
+        $result = $this->mysqli->query("SELECT * FROM `" . $this->mainTable . "`");
         $totalpedidos = $result->num_rows;
         return $totalpedidos;
     }
@@ -125,7 +125,7 @@ class cPedidos extends cKapsula
      */
     public function getPedidosEntreFechas($fecha_desde,$fecha_hasta)
     {
-        $sql = "SELECT * FROM `".$this->mainTable."` WHERE fecha_pedido BETWEEN '".$fecha_desde."' AND '".$fecha_hasta."' AND prenda != 'MEDIAS K' ORDER BY prenda" ;
+        $sql = "SELECT * FROM `".$this->mainTable."` WHERE fecha_pedido BETWEEN '".$fecha_desde."' AND '".$fecha_hasta."' AND prenda != 'MEDIAS K' AND fecha_entrega = '0000-00-00 00:00:00' ORDER BY prenda" ;
         $result = $this->mysqli->query($sql);
         if ($result) {
             while ($row = $result->fetch_object()) {

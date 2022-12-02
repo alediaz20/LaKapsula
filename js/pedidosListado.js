@@ -81,7 +81,7 @@ $(document).ready(function () {
     },
     lengthMenu: [25, 50, 75, 100],
     pageLength: 50,
-    order: [[5, "desc"]],
+    order: [],
   });
 });
 
